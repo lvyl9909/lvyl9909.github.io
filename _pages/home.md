@@ -57,6 +57,7 @@ Lab](https://www.xami-lab.org/){:target="_blank"} at QUT.
 
 #### Honors and Awards
 
+- Outstanding Doctoral Thesis Award (ODTA) for 2023, QUT
 - Graduate of Merit, Food Agility, 2023
 - Australian Commonwealth Research Training Program (Scholarship), 2019-2023
 - Top-up Scholarship, Food Agility, 2021-2022

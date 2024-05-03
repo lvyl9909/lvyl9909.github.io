@@ -55,8 +55,7 @@ publons_id: # your ID on Publons
 research_gate_profile: # your profile on ResearchGate
 blogger_url: # your blogger URL
 
-# cv_filename: YANG_cv_en.pdf
-cv_filename:
+cv_filename: YANG_cv_en.pdf
 
 contact_note: >
 
