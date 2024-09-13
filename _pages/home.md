@@ -46,7 +46,8 @@ Lab](https://www.xami-lab.org/){:target="_blank"} at QUT.
   [Chun Ouyang](https://staff.qut.edu.au/staff/c.ouyang){:target="_blank"}, 
   [Arthur ter Hofstede](https://arthurterhofstede.github.io/){:target="_blank"}, 
   and [Wil van der Aalst](http://www.vdaalst.com/){:target="_blank"}. 
-  An e-copy of my doctoral thesis can be download via [[this link](./assets/thesis_roys_version.pdf)].
+  - An e-copy of my doctoral thesis can be download via [[this link](./assets/thesis_roys_version.pdf)].
+  - *TL;DR* 5-page "Extended Abstract" via [[this link]](https://ceur-ws.org/Vol-3758/paper-03.pdf)
 
 - Master degree in Computer Science and Technology (2019), Sun Yat-sen University, China \\
   Thesis title: "An Organizational Mining Method for Supporting Business Process
@@ -57,11 +58,6 @@ Lab](https://www.xami-lab.org/){:target="_blank"} at QUT.
 
 #### Honors and Awards
 
+- Best BPM Dissertation Award 2024, International Conference on Business Process Management 
 - Outstanding Doctoral Thesis Award (ODTA) for 2023, QUT
-- Graduate of Merit, Food Agility, 2023
-- Australian Commonwealth Research Training Program (Scholarship), 2019-2023
-- Top-up Scholarship, Food Agility, 2021-2022
-- High-Achiever Higher Degree Research Student, QUT, March 2022
-- Excellent Master Student Award, Sun Yat-sen University, 2018
-- Meritorious Winner (`Team 37861`) the Mathematical Contest in Modelling,
-Consortium for Mathematics and Its Applications (COMAP), 2015
+- Graduate of Merit, Food Agility
