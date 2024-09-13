@@ -114,8 +114,6 @@ kramdown:
 # Includes & excludes
 include: ['_pages']
 exclude:
-  - Gemfile
-  - Gemfile.lock
   - LICENSE
   - .gitignore
   - deploy.md
