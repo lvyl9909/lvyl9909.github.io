@@ -116,7 +116,6 @@ include: ['_pages']
 exclude:
   - LICENSE
   - .gitignore
-  - deploy.md
   - setup.md
 keep_files:
   - CNAME

@@ -1,4 +1,4 @@
-name: Publish to GitHub Pages
+name: Sync with gh-pages
 
 # Trigger workflow on push to source branch
 on:
@@ -15,7 +15,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    # Step 2: Deploy to GitHub Pages
+    # Step 2: Deploy to GitHub Pages (sync to `gh-pages` branch)
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:

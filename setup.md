@@ -1,6 +1,5 @@
 Prerequisites (Ruby + Bundle)
 -----------------------------
-
 1. Download and install a Ruby+Devkit version
 NOTE 20240912: GitHub pages now supports Ruby 3.3.4, but still limits support to
 jekyll packages including jekyll-scholar
@@ -17,6 +16,8 @@ This is useful for a fresh start over.
 
 Test site locally
 -----------------
-
 `bundle exec jekyll serve --livereload`
 
+Build site locally
+------------------
+`bundle exec jekyll build`
