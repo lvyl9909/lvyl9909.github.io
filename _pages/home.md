@@ -20,17 +20,21 @@ social: true
 I'm a postdoctoral research fellow at Queensland University of Technology (QUT),
 Australia. I'm interested in discovering knowledge from process execution data
 to support improved decision-making, especially knowledge about (human)
-resources. 
+resources, and process automation. 
 
 My current research focuses on mining organizational models from process
 execution data and applying them to workforce analytics [[read
-more](/projects/omm)]. 
+more](/projects/omm)].
 
 I'm also involved in
 [Foragecaster](https://www.agriwebb.com/foragecaster/){:target="_blank"}, a
-project that aims at delivering a planner system, powered by accurate and
-reliable machine learning models, to support farmers in decisions on forage,
-grazing livestock, and farm sustainability.
+project that aims at delivering an AI-powered planner system to support farmers'
+decisions on forage, grazing livestock, and farm sustainability. I lead the
+research on data quality and explainability, where we develop systematic
+framework and methods to evaluate of key farm production data, diagnose and
+repair potential data quality issues, and investigate their root causes to
+improve future data management and ensure effective use of machine learning
+models from a data-centric perspective.
 
 
 I'm a member of the [Explainable Analytics for Machine Intelligence (XAMI)
