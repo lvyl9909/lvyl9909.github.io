@@ -6,7 +6,7 @@ permalink: /
 profile:
   image: avatar.jpg
   keywords:
-    researcher, process mining, predictive analytics, visual analytics
+    researcher, process mining, business process management, data science
   address: 
     School of Information Systems,
     Queensland University of Technology.
@@ -46,13 +46,15 @@ Lab](https://www.xami-lab.org/){:target="_blank"} at QUT.
   [Chun Ouyang](https://staff.qut.edu.au/staff/c.ouyang){:target="_blank"}, 
   [Arthur ter Hofstede](https://arthurterhofstede.github.io/){:target="_blank"}, 
   and [Wil van der Aalst](http://www.vdaalst.com/){:target="_blank"}. 
-  - An e-copy of my doctoral thesis can be download via [[this link](./assets/thesis_roys_version.pdf)].
-  - *TL;DR* 5-page "Extended Abstract" via [[this link]](https://ceur-ws.org/Vol-3758/paper-03.pdf)
+  - An e-copy of my doctoral thesis can be download via [[this link](./assets/thesis_roys_version.pdf)]
+  - *TL;DR* 5-page "Extended Abstract" via [[this link]](https://ceur-ws.org/Vol-3758/paper-03.pdf){:target="_blank"}
+
 
 - Master degree in Computer Science and Technology (2019), Sun Yat-sen University, China \\
   Thesis title: "An Organizational Mining Method for Supporting Business Process
   Redesign" (in Chinese), advised by 
   [Yang Yu](https://sse.sysu.edu.cn/teacher/163){:target="_blank"}.
+
 
 - Bachelor degree in Software Engineering (2016), Sun Yat-sen University, China
 
