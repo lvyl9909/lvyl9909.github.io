@@ -26,7 +26,7 @@ My current research focuses on mining organizational models from process
 execution data and applying them to workforce analytics [[read
 more](/projects/omm)].
 
-I am also involved in
+I'm also involved in
 [Foragecaster](https://www.agriwebb.com/foragecaster/){:target="_blank"}, a
 project that aims at developing an AI-powered planner system to support farmers'
 decisions on forage, grazing livestock, and farm sustainability. I lead the
