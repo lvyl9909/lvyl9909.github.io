@@ -17,7 +17,7 @@ news: true
 social: true
 ---
 
-I'm a postdoctoral research fellow at Queensland University of Technology (QUT),
+I am a postdoctoral research fellow at Queensland University of Technology (QUT),
 Australia. I'm interested in discovering knowledge from process execution data
 to support improved decision-making, especially knowledge about (human)
 resources, and process automation. 
@@ -26,7 +26,7 @@ My current research focuses on mining organizational models from process
 execution data and applying them to workforce analytics [[read
 more](/projects/omm)].
 
-I'm also involved in
+I am also involved in
 [Foragecaster](https://www.agriwebb.com/foragecaster/){:target="_blank"}, a
 project that aims at delivering an AI-powered planner system to support farmers'
 decisions on forage, grazing livestock, and farm sustainability. I lead the
