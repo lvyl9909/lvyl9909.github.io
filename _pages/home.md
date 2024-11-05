@@ -4,13 +4,13 @@ title: Home
 permalink: /
 
 profile:
-  image: avatar.jpg
+  image: avatar-yilin4.jpg
   keywords:
-    researcher, process mining, business process management, data science
+    master student, process mining, conformance checking, data science
   address: 
-    School of Information Systems,
-    Queensland University of Technology.
-    2 George St Brisbane, QLD 4000, Australia
+    School of Computing and Information Systems,
+    University of Melbourne.
+    Grattan Street, Parkville, Victoria, 3010
 
 selected_papers: true
 news: true
