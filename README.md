@@ -1,2 +1,0 @@
-# yilin.me
-personal website
