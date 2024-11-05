@@ -2,10 +2,10 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-author: Jing (Roy) Yang
-author_other: 杨靖
-title: Jing (Roy) Yang
-email: roy.j.yang@qut.edu.au
+author: Yilin (Alec) Lyu
+author_other: 吕怡霖
+title: Yilin (Alec) Lyu
+email: yillyu1@student.unimelb.edu.au
 motto: >
   <a href="https://en.wikipedia.org/wiki/Fan_Zhongyan#Literary_works"
   target="_blank">“不以物喜，不以己悲”（<宋>范仲淹 1046）</a>
@@ -44,18 +44,18 @@ og_image: # The site-wide (default for all links) Open Graph preview image
 # Social integration
 # -----------------------------------------------------------------------------
 
-github_username: roy-jingyang # your GitHub user name
+github_username: lvyl9909 # your GitHub user name
 twitter_username: # your Twitter handle
-linkedin_username: roy-jingyang
+linkedin_username: yilin-lyu-254a97289
 scholar_userid: #Ms1FNhsAAAAJ # your Google Scholar ID
-orcid_id: 0000-0001-9218-6954 # your ORCID ID
+orcid_id: 0009-0009-3808-3802 # your ORCID ID
 medium_username: # your Medium username
 quora_username: # your Quora username
 publons_id: # your ID on Publons
 research_gate_profile: # your profile on ResearchGate
 blogger_url: # your blogger URL
 
-cv_filename: YANG_cv_en.pdf
+cv_filename: Yilin_CV_en.pdf
 
 contact_note: >
 

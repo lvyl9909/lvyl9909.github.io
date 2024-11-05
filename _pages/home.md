@@ -17,14 +17,12 @@ news: true
 social: true
 ---
 
-I am a postdoctoral research fellow at Queensland University of Technology (QUT),
-Australia. I'm interested in discovering knowledge from process execution data
-to support improved decision-making, especially knowledge about (human)
-resources, and process automation. 
+I am currently a Master’s student in Software Engineering at the University of 
+Melbourne (Unimelb), Australia. I'm interested in process-aware data science, computer 
+modelling and machine learning.
 
-My current research focuses on mining organizational models from process
-execution data and applying them to workforce analytics [[read
-more](/projects/omm)].
+My current research focuses on developing advanced algorithms for approximate conformance
+checking between process execution data and models[[read more](/projects/omm)].
 
 I'm also involved in
 [Foragecaster](https://www.agriwebb.com/foragecaster/){:target="_blank"}, a
@@ -37,33 +35,27 @@ improve future data management and ensure effective use of machine learning
 models from a data-centric perspective.
 
 
-I'm a member of the [Explainable Analytics for Machine Intelligence (XAMI)
-Lab](https://www.xami-lab.org/){:target="_blank"} at QUT.
+[//]: # (I'm a member of the [Explainable Analytics for Machine Intelligence &#40;XAMI&#41;)
+
+[//]: # (Lab]&#40;https://www.xami-lab.org/&#41;{:target="_blank"} at QUT.)
 
 <hr>
 
 #### Education
 
-- Ph.D. (2023), Queensland University of Technology, Australia \\
-  Thesis title: "Discovering Organizational Models from Event Logs for Workforce Analytics",
-  advised by 
-  [Chun Ouyang](https://staff.qut.edu.au/staff/c.ouyang){:target="_blank"}, 
-  [Arthur ter Hofstede](https://arthurterhofstede.github.io/){:target="_blank"}, 
-  and [Wil van der Aalst](http://www.vdaalst.com/){:target="_blank"}. 
-  - An e-copy of my doctoral thesis can be download via [[this link](./assets/thesis_roys_version.pdf)]
-  - *TL;DR* 5-page "Extended Abstract" via [[this link]](https://ceur-ws.org/Vol-3758/paper-03.pdf){:target="_blank"}
+- Master degree (2023-Now), Software Engineering, University of Melbourne, Australia \\
+  Thesis title: "Enhancing Approximate Conformance Checking Accuracy with Hierarchical Clustering Model Behaviour Sampling", advised by 
+  [Artem Polyvyanyy](http://polyvyanyy.com/){:target="_blank"}.
+  -   An e-copy of my thesis can be download via [[this link](./assets/thesis_yilin.pdf)]
 
 
-- Master degree in Computer Science and Technology (2019), Sun Yat-sen University, China \\
-  Thesis title: "An Organizational Mining Method for Supporting Business Process
-  Redesign" (in Chinese), advised by 
-  [Yang Yu](https://sse.sysu.edu.cn/teacher/163){:target="_blank"}.
-
-
-- Bachelor degree in Software Engineering (2016), Sun Yat-sen University, China
+- Bachelor degree (2017-2021), Computer Science and Technology, Zhengzhou University, China
+  Thesis title: "Research on Cell Virtual Staining Method Based on U-GAT-IT" (In Chinese), advised by
+  [Ruijie Zhu](http://www7.zzu.edu.cn/csai/info/1054/1320.htm){:target="_blank"}.
+  -   An e-copy of my thesis can be download via [[this link](./assets/thesis_yilin_bachelor.pdf)]
 
 #### Honors and Awards
 
-- Best BPM Dissertation Award 2024, International Conference on Business Process Management 
-- Outstanding Doctoral Thesis Award (ODTA) for 2023, QUT
-- Graduate of Merit, Food Agility
+- Melbourne Global Scholars Award (MGSA) for 2024, University of Melbourne
+- First-Class Scholarship for Outstanding Students for 2021, Zhengzhou University
+- All-Rounder Outstanding Award for 2020, Zhengzhou University
