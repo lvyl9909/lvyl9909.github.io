@@ -1,10 +1,9 @@
 ---
 layout: post
-date: November 2023
+date: August 2024
 inline: true
 related_posts: false
 pinned: false
 ---
 
-- If you are interested in exploring how process mining may help unlock insights into human resources, consider applying to study with us at QUT: Data-driven and process-aware workforce analytics [[project link](https://www.qut.edu.au/research/study-with-us/student-topics/topics/data-driven-and-process-aware-workforce-analytics)]
-  
+- I have created a discussion group on process mining for junior scholar. If you're interested in joining, please contact me!

@@ -6,12 +6,23 @@ description:
 nav: true
 ---
 
-<div class="projects grid">
+<div class="toggle-container">
+  <label class="toggle-switch">
+    <input type="checkbox" id="toggleSwitch" class="toggle-switch-checkbox">
+    <span class="toggle-switch-label">
+      <span class="toggle-switch-inner"></span>
+      <span class="toggle-switch-switch"></span>
+    </span>
+  </label>
+</div>
+
+
+<div class="projects grid" id="projectsContainer">
 
   {% assign sorted_projects = site.projects | sort: "importance" %}
   {% for project in sorted_projects %}
   {% if project.is_index %}
-  <div class="grid-item">
+  <div class="grid-item {% if project.category %}{{ project.category }}{% endif %}">
     {% if project.redirect %}
     <a href="{{ project.redirect }}" target="_blank">
     {% else %}
@@ -47,3 +58,30 @@ nav: true
   {% endfor %}
 
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const toggleSwitch = document.getElementById("toggleSwitch");
+    const researchItems = document.querySelectorAll(".grid-item.research");
+    const developmentItems = document.querySelectorAll(".grid-item.development");
+
+    // 页面加载时默认显示 research 项目，隐藏 development 项目
+    researchItems.forEach(item => item.style.display = "block");
+    developmentItems.forEach(item => item.style.display = "none");
+
+    toggleSwitch.addEventListener("change", function() {
+      if (toggleSwitch.checked) {
+        // 显示 development 项目并隐藏 research 项目
+        researchItems.forEach(item => item.style.display = "none");
+        developmentItems.forEach(item => item.style.display = "block");
+      } else {
+        // 显示 research 项目并隐藏 development 项目
+        researchItems.forEach(item => item.style.display = "block");
+        developmentItems.forEach(item => item.style.display = "none");
+      }
+    });
+  });
+</script>
+
+
+

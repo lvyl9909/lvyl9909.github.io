@@ -236,6 +236,82 @@ footer.sticky-bottom {
 
 // Projects
 
+
+/* Toggle Switch */
+.toggle-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+/* Toggle Switch */
+.toggle-switch {
+  position: relative;
+  width: 130px;
+  display: inline-block;
+}
+
+.toggle-switch-checkbox {
+  display: none;
+}
+
+.toggle-switch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 50px;
+  position: relative;
+}
+
+.toggle-switch-inner {
+  display: flex;
+  justify-content: space-between;
+  width: 200%;
+  transition: margin 0.3s ease-in-out;
+  color: white;
+  font-weight: bold;
+}
+
+.toggle-switch-inner::before {
+  content: "Research";
+  display: block;
+  width: 50%;
+  text-align: center;
+  background-color: $theme-color;
+  color: white;
+}
+
+.toggle-switch-inner::after {
+  content: "Development";
+  display: block;
+  width: 50%;
+  text-align: center;
+  background-color: $grey-color-dark;
+  color: white;
+  padding-right: 15px; /* Nudge text slightly left */
+}
+
+.toggle-switch-switch {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: white;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+.toggle-switch-checkbox:checked + .toggle-switch-label .toggle-switch-inner {
+  margin-left: -100%;
+}
+
+.toggle-switch-checkbox:checked + .toggle-switch-label .toggle-switch-switch {
+  left: 108px;
+}
+
 .project .grid {
   display: grid;
   align-content: center;
@@ -253,6 +329,9 @@ footer.sticky-bottom {
         color: $theme-color;
       }
     }
+  }
+  .grid-item.development {
+    display: none;
   }
   .card {
     border-style: none;

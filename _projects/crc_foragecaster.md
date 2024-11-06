@@ -9,5 +9,6 @@ description: >
 nav: false
 is_index: true
 importance: 40
+category: research
 redirect: https://www.agriwebb.com/foragecaster/
 ---

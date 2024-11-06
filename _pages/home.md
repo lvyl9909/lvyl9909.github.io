@@ -24,15 +24,9 @@ modelling and machine learning.
 My current research focuses on developing advanced algorithms for approximate conformance
 checking between process execution data and models[[read more](/projects/omm)].
 
-I'm also involved in
-[Foragecaster](https://www.agriwebb.com/foragecaster/){:target="_blank"}, a
-project that aims at developing an AI-powered planner system to support farmers'
-decisions on forage, grazing livestock, and farm sustainability. I lead the
-research on data quality and explainability, where we develop systematic
-framework and methods to evaluate key farm production data, diagnose and
-repair potential data quality issues, and investigate their root causes to
-improve future data management and ensure effective use of machine learning
-models from a data-centric perspective.
+As a software engineering master, I'm also involved in building open-source well-documented software.
+Throughout the project, I excelled as team leader, overseeing workflow coordination, facilitating 
+communication, and actively participating in all phases of development.
 
 
 [//]: # (I'm a member of the [Explainable Analytics for Machine Intelligence &#40;XAMI&#41;)
@@ -51,7 +45,8 @@ models from a data-centric perspective.
 
 - Bachelor degree (2017-2021), Computer Science and Technology, Zhengzhou University, China
   Thesis title: "Research on Cell Virtual Staining Method Based on U-GAT-IT" (In Chinese), advised by
-  [Ruijie Zhu](http://www7.zzu.edu.cn/csai/info/1054/1320.htm){:target="_blank"}.
+  [Ruijie Zhu](http://www7.zzu.edu.cn/csai/info/1054/1320.htm){:target="_blank"}. 
+  -   Selected as an Outstanding Graduate Thesis.
   -   An e-copy of my thesis can be download via [[this link](./assets/thesis_yilin_bachelor.pdf)]
 
 #### Honors and Awards
