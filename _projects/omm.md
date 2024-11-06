@@ -12,47 +12,43 @@ is_index: true
 category: development
 ---
 
-Today's process mining techniques have empowered numerous modern
-organizations to use process execution data --- available from many
-contemporary enterprise information systems as event logs --- for
-diagnosing and improving their business processes from multiple
-perspectives and on a continuing basis.
-Human resources contribute an area less explored in process mining, but
-are recognized as an impactful factor to business process improvement.
+In recent years, alignment-based method has become the
+de facto standard for conformance checking in computing con-
+formance diagnostics, as it always returns the most accurate
+deviations, known as optimal-alignment. However, as the com-
+plexity of the log and model increases, the runtime complexity
+of optimal alignment computation grows exponentially, leading
+to extremely long computation times—sometimes even taking
+several weeks. This makes them impractical for real-world ap-
+plications. To tackle the problems, various approximation strategies
+have been proposed. Notably, model behaviour sampling method provides 
+an angle for approximate conformance checking, that is, selecting partial 
+model traces to substitute process model.
 
-My research looks into the human resource perspective of process mining
-and centers around organizational model mining from event logs.
-We develop models, methods, and software tools to extract insights into
-human resource groupings and behavior relevant to business process
-execution.
-In doing so, we aim to support organizations to make guided decisions on
-staff deployment and organization design.
-Our research is built within *OrdinoR*, a
-framework for organizational model mining, as illustrated below.
+My research looks into an enhanced model behaviour sampling method to 
+select more representative subsets and get more accuracy approximate values.
+We apply hierarchical clustering to the event log with a new proposed 
+distance criterion. Then, we propose two in-cluster methods to select 
+typical traces from each cluster. Finally, we extend existing cost lower 
+bound algorithm to achieve more accurate approximation results.
+
+Our framework for proposed methods, as illustrated below.
 
 <div class="w-75 mx-auto d-block">
 <figure class="figure">
-  <img src="{{ '/assets/img/research-omm/framework.svg' | relative_url }}"
+  <img src="{{ '/assets/img/research-hierarchical/framework-hierarchical.svg' | relative_url }}"
   class="figure-img img-fluid rounded" 
-  alt="Organizational model mining framework">
+  alt="Proposed framework">
   <figcaption class="figure-caption text-center">
-    Figure 1: OrdinoR ("organize resources"), our framework for organizational model mining from event logs
+    Figure 1: Our framework for proposed approximate conformance checking method
   </figcaption>
 </figure>
 </div>
 
-What underpins this framework is our notion of organizational model that
-captures human resources, their groups, and the connection between the
-groupings and process execution.
-With this novel notion, OrdinoR lays the foundation of many exciting
-topics being researched --- for example, how can we use organizational models 
-discovered from event logs to analyze the behavior of resources groups working 
-in processes?
-
-Besides the theoretical part of research, we are also developing an
-open-source Python toolkit that implements OrdinoR and the relevant methods and 
-techniques. Keep an eye on us if you find this topic interesting --- the party 
-has started 🥳!
+With this novel notion, our method lays the foundation of many exciting
+futures being researched --- for example, can we use more advanced hierarchical
+algorithm to obtain results? Keep an eye on us if you find this method interesting 
+and practical --- the party has started 🥳!
 
 <!--
 <nav>

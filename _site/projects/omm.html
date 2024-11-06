@@ -42,11 +42,11 @@
 <meta property="og:url" content="http://localhost:4000/projects/omm" />
 <meta property="og:site_name" content="Yilin (Alec) Lyu" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-11-06T18:14:31+08:00" />
+<meta property="article:published_time" content="2024-11-07T00:20:54+08:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Organizational Model Mining" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yilin (Alec) Lyu"},"dateModified":"2024-11-06T18:14:31+08:00","datePublished":"2024-11-06T18:14:31+08:00","description":"Event logs can be a promising source for discovering knowledge on organizational structures and empowering workforce analytics. Novel process mining methods unlock this opportunity.","headline":"Organizational Model Mining","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/projects/omm"},"url":"http://localhost:4000/projects/omm"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yilin (Alec) Lyu"},"dateModified":"2024-11-07T00:20:54+08:00","datePublished":"2024-11-07T00:20:54+08:00","description":"Event logs can be a promising source for discovering knowledge on organizational structures and empowering workforce analytics. Novel process mining methods unlock this opportunity.","headline":"Organizational Model Mining","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/projects/omm"},"url":"http://localhost:4000/projects/omm"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -204,45 +204,41 @@
   </header>
 
   <article>
-    <p>Today’s process mining techniques have empowered numerous modern
-organizations to use process execution data — available from many
-contemporary enterprise information systems as event logs — for
-diagnosing and improving their business processes from multiple
-perspectives and on a continuing basis.
-Human resources contribute an area less explored in process mining, but
-are recognized as an impactful factor to business process improvement.</p>
+    <p>In recent years, alignment-based method has become the
+de facto standard for conformance checking in computing con-
+formance diagnostics, as it always returns the most accurate
+deviations, known as optimal-alignment. However, as the com-
+plexity of the log and model increases, the runtime complexity
+of optimal alignment computation grows exponentially, leading
+to extremely long computation times—sometimes even taking
+several weeks. This makes them impractical for real-world ap-
+plications. To tackle the problems, various approximation strategies
+have been proposed. Notably, model behaviour sampling method provides 
+an angle for approximate conformance checking, that is, selecting partial 
+model traces to substitute process model.</p>
 
-<p>My research looks into the human resource perspective of process mining
-and centers around organizational model mining from event logs.
-We develop models, methods, and software tools to extract insights into
-human resource groupings and behavior relevant to business process
-execution.
-In doing so, we aim to support organizations to make guided decisions on
-staff deployment and organization design.
-Our research is built within <em>OrdinoR</em>, a
-framework for organizational model mining, as illustrated below.</p>
+<p>My research looks into an enhanced model behaviour sampling method to 
+select more representative subsets and get more accuracy approximate values.
+We apply hierarchical clustering to the event log with a new proposed 
+distance criterion. Then, we propose two in-cluster methods to select 
+typical traces from each cluster. Finally, we extend existing cost lower 
+bound algorithm to achieve more accurate approximation results.</p>
+
+<p>Our framework for proposed methods, as illustrated below.</p>
 
 <div class="w-75 mx-auto d-block">
 <figure class="figure">
-  <img src="/assets/img/research-omm/framework.svg" class="figure-img img-fluid rounded" alt="Organizational model mining framework" />
+  <img src="/assets/img/research-hierarchical/framework-hierarchical.svg" class="figure-img img-fluid rounded" alt="Proposed framework" />
   <figcaption class="figure-caption text-center">
-    Figure 1: OrdinoR ("organize resources"), our framework for organizational model mining from event logs
+    Figure 1: Our framework for proposed approximate conformance checking method
   </figcaption>
 </figure>
 </div>
 
-<p>What underpins this framework is our notion of organizational model that
-captures human resources, their groups, and the connection between the
-groupings and process execution.
-With this novel notion, OrdinoR lays the foundation of many exciting
-topics being researched — for example, how can we use organizational models 
-discovered from event logs to analyze the behavior of resources groups working 
-in processes?</p>
-
-<p>Besides the theoretical part of research, we are also developing an
-open-source Python toolkit that implements OrdinoR and the relevant methods and 
-techniques. Keep an eye on us if you find this topic interesting — the party 
-has started 🥳!</p>
+<p>With this novel notion, our method lays the foundation of many exciting
+futures being researched — for example, can we use more advanced hierarchical
+algorithm to obtain results? Keep an eye on us if you find this method interesting 
+and practical — the party has started 🥳!</p>
 
 <!--
 <nav>
@@ -300,7 +296,7 @@ analytics (appeared on BPM’21)</a></li>
 <footer class="sticky-bottom mt-5">
   <div class="container">
     <div class="mx-auto text-center font-weight-bold">
-      <a href="https://en.wikipedia.org/wiki/Fan_Zhongyan#Literary_works" target="_blank">“得之坦然，失之淡然，争其必然，顺其自然”</a>
+      <a href="https://en.wikipedia.org/wiki/Laozi#Tao_Te_Ching" target="_blank">“得之坦然，失之淡然，争其必然，顺其自然”</a>
 
     </div>
 
@@ -309,7 +305,7 @@ analytics (appeared on BPM’21)</a></li>
       Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a>. Based on <a href="https://github.com/alshedivat/al-folio">al-folio</a>. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 
       
-        Last updated on 2024/11/06.
+        Last updated on 2024/11/07.
       
     </div>
   </div>
