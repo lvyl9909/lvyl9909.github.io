@@ -215,25 +215,19 @@
 </div>
 
 <div class="projects grid" id="projectsContainer">
-
   
   
   
   
   
-  <div class="grid-item research">
-    
-    <a href="/projects/mamba">
-    
+  <div class="grid-item development" data-category="development">
+    <a href="/projects/development_vpa">
       <div class="card hoverable">
         
         <div class="card-body">
-          <h2 class="card-title">Mamba-based Approximate Conformance Checking Method</h2>
-          <p class="card-text text-secondary">Event logs can be a promising source for discovering knowledge on  organizational structures and empowering workforce analytics. Novel process  mining methods unlock this opportunity.
+          <h2 class="card-title">Visualisation of Post-Election Audits (VPA)</h2>
+          <p class="card-text text-secondary">A React+Typescript project that aims at developing a sophisticated web-based visualisation system for  post-election risk-limiting audits. Building upon the existing minimal visualiser, which helps explain  audit assertions derived from election outcomes, this project seek to enhance its functionality and make it more robust.
 </p>
-          <div class="row ml-1 mr-1 p-0">
-            
-          </div>
         </div>
       </div>
     </a>
@@ -241,19 +235,29 @@
   
   
   
-  <div class="grid-item research">
-    
+  <div class="grid-item research" data-category="research">
+    <a href="/projects/hierarchical">
+      <div class="card hoverable">
+        
+        <div class="card-body">
+          <h2 class="card-title">Enhancing Approximate Conformance Checking Accuracy with Hierarchical Clustering Model Behaviour Sampling</h2>
+          <p class="card-text text-secondary">Existing model sampling-based methods for approximate conformance checking lack sufficient accuracy. This study  proposes new hierarchical clustering approaches to improve approximation, achieving results closer to exact values.
+</p>
+        </div>
+      </div>
+    </a>
+  </div>
+  
+  
+  
+  <div class="grid-item development" data-category="development">
     <a href="/projects/omm">
-    
       <div class="card hoverable">
         
         <div class="card-body">
           <h2 class="card-title">Organizational Model Mining</h2>
           <p class="card-text text-secondary">Event logs can be a promising source for discovering knowledge on  organizational structures and empowering workforce analytics. Novel process  mining methods unlock this opportunity.
 </p>
-          <div class="row ml-1 mr-1 p-0">
-            
-          </div>
         </div>
       </div>
     </a>
@@ -261,19 +265,14 @@
   
   
   
-  <div class="grid-item research">
-    
-    <a href="https://www.agriwebb.com/foragecaster/" target="_blank">
-    
+  <div class="grid-item development" data-category="development">
+    <a href="/projects/development_club">
       <div class="card hoverable">
         
         <div class="card-body">
-          <h2 class="card-title">Foragecaster</h2>
-          <p class="card-text text-secondary">Accurate and reliable machine learning models fueled by quality farming data  can reinforce decisions on growth of forage, grazing livestock and farm  sustainability.
+          <h2 class="card-title">The University of Melbourne Club Management System (UMCMS)</h2>
+          <p class="card-text text-secondary">A React+Servlets+PostgreSQL project that develops an application to help students efficiently manage campus  clubs and events at the University of Melbourne.
 </p>
-          <div class="row ml-1 mr-1 p-0">
-            
-          </div>
         </div>
       </div>
     </a>
@@ -281,50 +280,66 @@
   
   
   
-  <div class="grid-item development">
-    
-    <a href="https://www.notion.so/team/f228677e-6888-45bd-baf9-ae621984cb4d/join" target="_blank">
-    
+  <div class="grid-item research" data-category="research">
+    <a href="/projects/mamba">
       <div class="card hoverable">
         
         <div class="card-body">
-          <h2 class="card-title">Visualisation of Post-Election Audits (VPA)</h2>
-          <p class="card-text text-secondary">A project that aims at developing a robust, sophisticated platform for analyzing and presenting election results, integrating advanced data analysis techniques with intuitive visualization tools to enable institutions to efficiently and accurately conduct comprehensive reviews of election processes and outcomes.
+          <h2 class="card-title">Mamba-based Approximate Conformance Checking Method</h2>
+          <p class="card-text text-secondary">Event logs can be a promising source for discovering knowledge on  organizational structures and empowering workforce analytics. Novel process  mining methods unlock this opportunity.
 </p>
-          <div class="row ml-1 mr-1 p-0">
-            
-          </div>
         </div>
       </div>
     </a>
   </div>
   
   
-
+  
+  <div class="grid-item research" data-category="research">
+    <a href="/projects/snn">
+      <div class="card hoverable">
+        
+        <div class="card-body">
+          <h2 class="card-title">Dropout in Spiking Neural Networks for Overfitting</h2>
+          <p class="card-text text-secondary">SNNs often struggle with overfitting and generalization issues.  This study investigates the effectiveness of various dropout techniques to address them。
+</p>
+        </div>
+      </div>
+    </a>
+  </div>
+  
+  
 </div>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const toggleSwitch = document.getElementById("toggleSwitch");
-    const researchItems = document.querySelectorAll(".grid-item.research");
-    const developmentItems = document.querySelectorAll(".grid-item.development");
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleSwitch = document.getElementById("toggleSwitch");
+  const projectsContainer = document.getElementById("projectsContainer");
 
-    // 页面加载时默认显示 research 项目，隐藏 development 项目
-    researchItems.forEach(item => item.style.display = "block");
-    developmentItems.forEach(item => item.style.display = "none");
-
-    toggleSwitch.addEventListener("change", function() {
-      if (toggleSwitch.checked) {
-        // 显示 development 项目并隐藏 research 项目
-        researchItems.forEach(item => item.style.display = "none");
-        developmentItems.forEach(item => item.style.display = "block");
+  function filterProjects(category) {
+    const projects = projectsContainer.querySelectorAll(".grid-item");
+    projects.forEach(project => {
+      if (project.getAttribute("data-category") === category) {
+        project.style.display = "block"; // 显示符合条件的项目
       } else {
-        // 显示 research 项目并隐藏 development 项目
-        researchItems.forEach(item => item.style.display = "block");
-        developmentItems.forEach(item => item.style.display = "none");
+        project.style.display = "none"; // 完全隐藏不符合条件的项目
       }
     });
+  }
+
+
+  // 默认显示 research 项目
+  filterProjects("research");
+
+  // 切换事件监听器
+  toggleSwitch.addEventListener("change", function () {
+    if (toggleSwitch.checked) {
+      filterProjects("development");
+    } else {
+      filterProjects("research");
+    }
   });
+});
 </script>
 
 
@@ -340,7 +355,7 @@
 <footer class="sticky-bottom mt-5">
   <div class="container">
     <div class="mx-auto text-center font-weight-bold">
-      <a href="https://en.wikipedia.org/wiki/Fan_Zhongyan#Literary_works" target="_blank">“不以物喜，不以己悲”（<宋>范仲淹 1046）</a>
+      <a href="https://en.wikipedia.org/wiki/Fan_Zhongyan#Literary_works" target="_blank">“得之坦然，失之淡然，争其必然，顺其自然”</a>
 
     </div>
 

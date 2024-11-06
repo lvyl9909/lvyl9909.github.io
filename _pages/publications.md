@@ -8,12 +8,20 @@ nav: true
 ---
 
 <p class="text-secondary">
-    For accurate citation and BibTeX export please visit: 
-    <a href="https://dblp.org/pid/62/5839-40.html" target="_blank">
-        https://dblp.org/pid/62/5839-40.html
-    </a>
+    Hoping both my publication list and hair keep growing
 </p>
 
-<div class="publications" id="publications-full">
-{% bibliography -f publications -q @* %}
+### Journal Articles
+<div class="publications" id="publications-journal">
+{% bibliography -f publications -q @article %}
+</div>
+
+### Conference Articles
+<div class="publications" id="publications-conference">
+{% bibliography -f publications -q @inproceedings %}
+</div>
+
+### Patents
+<div class="publications" id="publications-patent">
+{% bibliography -f publications -q @misc %}
 </div>

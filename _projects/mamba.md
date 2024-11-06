@@ -7,7 +7,7 @@ description: >
   organizational structures and empowering workforce analytics. Novel process 
   mining methods unlock this opportunity.
 nav: false
-importance: 11
+importance: 2
 is_index: true
 category: research
 ---

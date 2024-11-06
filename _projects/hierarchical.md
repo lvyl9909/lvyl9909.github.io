@@ -1,15 +1,14 @@
 ---
 layout: page
-permalink: /projects/omm
-title: Organizational Model Mining
+permalink: /projects/hierarchical
+title: Enhancing Approximate Conformance Checking Accuracy with Hierarchical Clustering Model Behaviour Sampling
 description: >
-  Event logs can be a promising source for discovering knowledge on 
-  organizational structures and empowering workforce analytics. Novel process 
-  mining methods unlock this opportunity.
+  Existing model sampling-based methods for approximate conformance checking lack sufficient accuracy. This study 
+  proposes new hierarchical clustering approaches to improve approximation, achieving results closer to exact values.
 nav: false
-importance: 1
 is_index: true
-category: development
+importance: 1
+category: research
 ---
 
 Today's process mining techniques have empowered numerous modern
@@ -45,13 +44,13 @@ What underpins this framework is our notion of organizational model that
 captures human resources, their groups, and the connection between the
 groupings and process execution.
 With this novel notion, OrdinoR lays the foundation of many exciting
-topics being researched --- for example, how can we use organizational models 
-discovered from event logs to analyze the behavior of resources groups working 
+topics being researched --- for example, how can we use organizational models
+discovered from event logs to analyze the behavior of resources groups working
 in processes?
 
 Besides the theoretical part of research, we are also developing an
-open-source Python toolkit that implements OrdinoR and the relevant methods and 
-techniques. Keep an eye on us if you find this topic interesting --- the party 
+open-source Python toolkit that implements OrdinoR and the relevant methods and
+techniques. Keep an eye on us if you find this topic interesting --- the party
 has started 🥳!
 
 <!--
@@ -94,7 +93,7 @@ has started 🥳!
 - [Workforce analytics &times; Process mining: Group-oriented workforce
   analytics (appeared on BPM'21)][forestpaper]
 - [OrdinoR: A Python toolkit for organizational model mining from event logs][rtdwebsite]
-  
+
 [rtdwebsite]: https://royjy.me/to/ordinor
 [frameworkpaper]: https://ordinor.readthedocs.io/en/latest/citing.html
 [forestpaper]: /projects/omm/forest
