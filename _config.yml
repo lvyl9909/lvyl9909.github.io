@@ -14,6 +14,7 @@ description: > # this means to ignore newlines until "url:"
 footer_text: >
   Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a>.
   Based on <a href="https://github.com/alshedivat/al-folio">al-folio</a>.
+  Inspired by <a href="https://github.com/roy-jingyang/roy-jingyang.github.io" target="_blank">roy-jingyang</a>.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 
 # the base hostname & protocol for your site
@@ -90,7 +91,9 @@ collections:
   projects:
     output: true
     permalink: /projects/:path/
-
+  industry:
+    output: true
+    permalink: /industry/:path/
 news_limit: 3
 
 # -----------------------------------------------------------------------------

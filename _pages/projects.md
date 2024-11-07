@@ -4,6 +4,7 @@ title: Projects
 permalink: /projects/
 description:
 nav: true
+nav_order: 2
 ---
 
 <div class="toggle-container">
@@ -22,7 +23,11 @@ nav: true
   {% for project in sorted_projects %}
   {% if project.is_index %}
   <div class="grid-item {{ project.category }}" data-category="{{ project.category }}">
+    {% if project.redirect %}
+    <a href="{{ project.redirect }}" target="_blank">
+    {% else %}
     <a href="{{ project.url | relative_url }}">
+    {% endif %}
       <div class="card hoverable">
         {% if project.img %}
         <img src="{{ project.img | relative_url }}" alt="project thumbnail">

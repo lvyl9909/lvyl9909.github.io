@@ -5,6 +5,7 @@ title: Publications
 description: 
 years: []
 nav: true
+nav_order: 4
 ---
 
 <p class="text-secondary">

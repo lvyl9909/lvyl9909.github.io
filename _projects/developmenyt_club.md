@@ -9,5 +9,5 @@ nav: false
 is_index: true
 importance: 2
 category: development
-redirect: https://github.com/lvyl9909/test
+redirect: https://github.com/lvyl9909/test/
 ---

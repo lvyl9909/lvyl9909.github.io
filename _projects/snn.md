@@ -9,5 +9,5 @@ nav: false
 importance: 3
 is_index: true
 category: research
-redirect: https://www.spiedigitallibrary.org/conference-proceedings-of-SPIE/13291.toc
+redirect: /assets/snn.pdf
 ---

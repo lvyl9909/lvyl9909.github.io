@@ -352,6 +352,36 @@ footer.sticky-bottom {
   width: 100%;
 }
 
+.industry a {
+  text-decoration: none;
+}
+.industry a:hover .card-title {
+  color: var(--global-theme-color);
+}
+.industry .card img {
+  width: 100%;
+}
+.industry .card-item {
+  width: auto;
+  margin-bottom: 10px;
+}
+.industry .card-item .row {
+  display: flex;
+  align-items: center;
+}
+.industry .grid-sizer, .industry .grid-item {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.industry h2.category {
+  color: var(--global-divider-color);
+  border-bottom: 1px solid var(--global-divider-color);
+  padding-top: 0.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-align: right;
+}
+
 .publications h2.year {
   color: #e8e8e8;
   border-top: 1px solid #e8e8e8;

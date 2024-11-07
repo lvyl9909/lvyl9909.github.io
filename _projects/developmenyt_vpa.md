@@ -11,5 +11,5 @@ nav: false
 is_index: true
 importance: 0
 category: development
-redirect: https://www.notion.so/Team-Profile-6b214edc3ab44aefb0a5a44fbb1c8a28?pvs=4
+redirect: https://www.notion.so/Team-Profile-6b214edc3ab44aefb0a5a44fbb1c8a28?pvs=4/
 ---
