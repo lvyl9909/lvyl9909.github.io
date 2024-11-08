@@ -1,0 +1,35 @@
+<!-- _includes/industry.html -->
+<div class="grid-sizer"></div>
+<div class="grid-item">
+  {%- if industry.enable_hyperlink -%}
+  {% if industry.redirect -%}
+  <a href="{{ industry.redirect }}">
+    {%- else -%}
+    <a href="{{ industry.url | relative_url }}">
+      {%- endif %}
+      {%- endif %}
+
+      <div class="card hoverable">
+        {%- if industry.img %}
+        {%- include figure.html path=industry.img alt="industry thumbnail" -%}
+        {%- endif %}
+
+        <div class="card-body">
+          <!-- Title with Clickable Company Name and Category -->
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h4 class="card-title">
+              {{ industry.title | split: '@' | first }} @
+              <a href="{{ industry.company_link }}" target="_blank">{{ industry.title | split: '@' | last | strip }}</a>
+            </h4>
+            <span class="card-category" style="font-size: 1rem; font-weight: bold;">{{ industry.category }}</span>
+          </div>
+
+          <!-- Description -->
+          <p class="card-text" style="white-space: pre-wrap;">{{ industry.description }}</p>
+        </div>
+      </div>
+
+      {%- if industry.enable_hyperlink -%}
+    </a>
+    {%- endif %}
+</div>

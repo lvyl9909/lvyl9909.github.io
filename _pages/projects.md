@@ -59,11 +59,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-
-  // 默认显示 research 项目
   filterProjects("research");
 
-  // 切换事件监听器
   toggleSwitch.addEventListener("change", function () {
     if (toggleSwitch.checked) {
       filterProjects("development");
