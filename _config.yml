@@ -18,7 +18,7 @@ footer_text: >
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 
 # the base hostname & protocol for your site
-url: 
+url: "https://lvyl9909.github.io"
 # the subpath of your site, e.g. /blog/
 baseurl: 
 # set to true if you want to display last updated in the footer
