@@ -12,14 +12,14 @@ category: research
 ---
 
 In recent years, alignment-based method has become the
-de facto standard for conformance checking in computing con-
-formance diagnostics, as it always returns the most accurate
-deviations, known as optimal-alignment. However, as the com-
-plexity of the log and model increases, the runtime complexity
+de facto standard for conformance checking in computing conformance 
+diagnostics, as it always returns the most accurate
+deviations, known as optimal-alignment. However, as the complexity 
+of the log and model increases, the runtime complexity
 of optimal alignment computation grows exponentially, leading
 to extremely long computation times—sometimes even taking
-several weeks. This makes them impractical for real-world ap-
-plications. To tackle the problems, various approximation strategies
+several weeks. This makes them impractical for real-world applications.
+To tackle the problems, various approximation strategies
 have been proposed. Notably, model behaviour sampling method provides
 an angle for approximate conformance checking, that is, selecting partial
 model traces to substitute process model.

@@ -22,7 +22,7 @@ Melbourne (Unimelb), Australia. I'm interested in process-aware data science, co
 modelling and machine learning.
 
 My current research focuses on developing advanced algorithms for approximate conformance
-checking between process execution data and models[[read more](/projects/omm)].
+checking between process execution data and models[[read more](/projects/hierarchical.md)].
 
 As a software engineering master, I'm also involved in building open-source well-documented software.
 Throughout the project, I excelled as team leader, overseeing workflow coordination, facilitating 
