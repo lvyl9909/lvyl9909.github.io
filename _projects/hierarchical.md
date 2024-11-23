@@ -54,5 +54,5 @@ and practical --- the party has started 🥳!
 - [Our paper presenting the framework][frameworkpaper]
 - [Our github repository for source code and experiment data][rtdwebsite]
 
-[frameworkpaper]: {{ '/assets/Hierarchical_paper.pdf' | relative_url }}
+[frameworkpaper]: {{ '/assets/Hierarchicalpaper.pdf' | relative_url }}
 [rtdwebsite]: https://github.com/lvyl9909/Approximate-Conformance-Checking-using-Hierarchical-Clustering
