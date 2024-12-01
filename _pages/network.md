@@ -15,10 +15,10 @@ Below is my network🌐. Zoom-in to explore it!
 <script>const data = {
   nodes: [
     // 第一层级
-    {id: 'Research', group: 'Research', color: '#1E90FF', r: 150},
-    {id: 'Industry', group: 'Industry', color: '#FFD700', r: 150},
-    {id: 'Programming', group: 'Programming', color: '#8A2BE2', r: 150},
-    {id: 'Software Tech', group: 'Software Tech', color: '#FF6347', r: 150},
+    {id: 'Research', group: 'Research', color: '#1E90FF', r: 200},
+    {id: 'Industry', group: 'Industry', color: '#FFD700', r: 200},
+    {id: 'Programming', group: 'Programming', color: '#8A2BE2', r: 200},
+    {id: 'Software Tech', group: 'Software Tech', color: '#FF6347', r: 200},
     // 第二层级 - Research的子类
     {id: 'Process Mining', group: 'Process Mining', parent: 'Research'},
     {id: 'Cybersecurity', group: 'Cybersecurity', parent: 'Research'},
@@ -90,6 +90,7 @@ Below is my network🌐. Zoom-in to explore it!
       
       {source: 'Industry', target: 'Network Security'},
       {source: 'Industry', target: 'Web Application'},
+      {source: 'Industry', target: 'Project Management'},
       {source: 'Web Application', target: 'Maven'},
       {source: 'Java', target: 'Maven'},   
 
@@ -126,6 +127,12 @@ Below is my network🌐. Zoom-in to explore it!
       {source: 'Process Mining', target: 'Process Prediction'},
       {source: 'Process Mining', target: 'Conformance Checking'},
       {source: 'Process Mining', target: 'Anomaly Detection'},
+      {source: 'Graph Neural Networks', target: 'Anomaly Detection'},
+      {source: 'Clustering', target: 'Process Discovery'},
+      {source: 'Clustering', target: 'Conformance Checking'},
+      {source: 'RNN', target: 'RNN-based Approximation'},
+      {source: 'Mamba', target: 'RNN-based Approximation'},
+
     
       // 第四层级 - Conformance Checking的子类
       {source: 'Conformance Checking', target: 'Sampling Approximation'},
@@ -143,6 +150,13 @@ Below is my network🌐. Zoom-in to explore it!
       {source: 'Framework', target: 'Next.js'},
       {source: 'Framework', target: 'TensorFlow'},
       {source: 'Framework', target: 'PyTorch'},
+      {source: 'Python', target: 'Django'},
+      {source: 'Vue', target: 'HTML'},
+      {source: 'React', target: 'HTML'},
+      {source: 'React', target: 'Javascript'},
+      {source: 'React', target: 'Typescript'},
+      {source: 'Servlet', target: 'Java'},
+      {source: 'PHP', target: 'Project Management'},
     
       // 第四层级 - Fuzzing的子类
       {source: 'Fuzzing', target: 'AFLNet'},
@@ -159,9 +173,7 @@ Below is my network🌐. Zoom-in to explore it!
       {source: 'Machine Learning', target: 'PyTorch'},
     
       // RNN / LSTM / Transformer & Frameworks 相关性
-      {source: 'RNN', target: 'TensorFlow'},
       {source: 'RNN', target: 'PyTorch'},
-      {source: 'LSTM', target: 'TensorFlow'},
       {source: 'LSTM', target: 'PyTorch'},
       {source: 'Transformer', target: 'TensorFlow'},
       {source: 'Transformer', target: 'PyTorch'},
@@ -192,32 +204,54 @@ Below is my network🌐. Zoom-in to explore it!
     {source: 'Java', target: 'Process Mining'},
     {source: 'Python', target: 'Process Mining'},
     {source: 'Python', target: 'Conformance Checking'},
-    {source: 'Java', target: 'Architecture'}
+    {source: 'Java', target: 'Architecture'},
+    {source: 'MATLAB', target: 'Computer Modeling'},
+    {source: 'Web Application', target: 'V model'},
+    {source: 'Web Application', target: 'Project Management'}
   ]
 };
 
-// Function to generate a random color
+// Function to generate a random color, avoiding dark colors
 function getRandomColor() {
-  const letters = '0123456789ABCDEF';
-  let color = '#';
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
+  const min = 128; // Minimum value for color components to avoid dark colors
+  const max = 255; // Maximum value for color components
+  const r = Math.floor(Math.random() * (max - min + 1) + min); // Random red value
+  const g = Math.floor(Math.random() * (max - min + 1) + min); // Random green value
+  const b = Math.floor(Math.random() * (max - min + 1) + min); // Random blue value
+  
+  // Convert to hexadecimal color code
+  return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
 }
+
 
 // Assign random colors to second-level nodes, only if their parent is one of the first-level categories
 data.nodes.forEach(d => {
   if (['Research', 'Industry', 'Programming', 'Software Tech'].includes(d.id)) {
-    d.r = 150; 
+    d.r = 200; 
   }
-  // 处理二级节点：如果它们的父节点属于一级节点类别，则赋予随机颜色并设置半径为 50
   else if (d.parent && ['Research', 'Industry', 'Programming', 'Software Tech'].includes(d.parent)) {
     d.color = getRandomColor(); // 给二级节点分配随机颜色
-    d.r = 80;  // 设置二级节点的半径为 80
+    d.r = 100;  // 设置二级节点的半径为 80
   }
 });
 
+data.nodes.forEach(d => {
+  let currentParent = d;
+  let parentCount = 0;
+
+  // 向上查找父节点的父节点的父节点，直到最多查三层
+  while (currentParent && parentCount < 3) {
+    currentParent = data.nodes.find(node => node.id === currentParent.parent);
+    parentCount++;
+
+    // 只有当查到父节点的父节点的父节点是目标之一时，才改变颜色
+    if (parentCount === 3 && currentParent && ['Research', 'Industry', 'Programming', 'Software Tech'].includes(currentParent.id)) {
+      // 将当前节点的颜色设置为浅灰色
+      d.color = '#D3D3D3';  // 浅灰色
+      break;  // 找到后不再继续向上查找
+    }
+  }
+});
 
 
   // 创建SVG元素
@@ -242,7 +276,7 @@ data.nodes.forEach(d => {
   // 设置力导向图的模拟布局
   const simulation = d3.forceSimulation(data.nodes)
     .force("link", d3.forceLink(data.links).id(d => d.id).distance(150))  // 设置链接的距离
-    .force("charge", d3.forceManyBody().strength(-5000))  // 节点之间的排斥力
+    .force("charge", d3.forceManyBody().strength(-6000))  // 节点之间的排斥力
     .force("center", d3.forceCenter(width / 2, height / 2));  // 设置图谱的中心
 
     const marker = svg.append("defs").selectAll("marker")
@@ -250,8 +284,8 @@ data.nodes.forEach(d => {
       .enter().append("marker")
       .attr("id", "arrow")
       .attr("viewBox", "0 -5 10 10")
-      .attr("refX", 24)
-      .attr("refY", 0)
+      .attr("refX", 37)
+      .attr("refY", -1.4)
       .attr("orient", "auto")
       .attr("markerWidth", 6)
       .attr("markerHeight", 6)
@@ -285,8 +319,8 @@ data.nodes.forEach(d => {
     .data(data.nodes)
     .enter().append("circle")
     .attr("class", "node")
-    .attr("r", d => d.r || 30)  // 大类节点的半径根据自定义的r值
-    .attr("fill", d => d.color || '#D3D3D3')  // 子类继承父类颜色或者使用默认的浅灰色
+    .attr("r", d => d.r || 50)  // 大类节点的半径根据自定义的r值
+    .attr("fill", d => d.color || '#FAF0E6')  // 子类继承父类颜色或者使用默认的浅米色
     .call(d3.drag()
       .on("start", dragStart)
       .on("drag", dragging)
@@ -306,26 +340,6 @@ data.nodes.forEach(d => {
       })
       .text(d => d.id);  // 设置文本内容为节点的id
 
-    // 初始化时隐藏子节点
-    node.each(function(d) {
-      // 找到父节点
-      const parentNode = data.nodes.find(node => node.id === d.parent);
-    
-      // 如果父节点没有颜色，则将该子节点隐藏
-      if (parentNode && !parentNode.color) {
-        // 隐藏节点圆圈
-        d3.select(this).style("display", "none");
-    
-        // 隐藏与此子节点相关的连接线
-        link.filter(l => l.source.id === d.id || l.target.id === d.id)
-          .style("display", "none");
-    
-        // 隐藏节点名称
-        d3.selectAll(".label")
-          .filter(label => label.id === d.id)  // 过滤出当前节点的名字
-          .style("display", "none");
-      }
-    });
 
 // 监听点击事件
 // 创建一个对象来记录每个节点的展开状态
