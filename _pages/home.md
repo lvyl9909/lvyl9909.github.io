@@ -37,13 +37,13 @@ communication, and actively participating in all phases of development.
 
 #### Education
 
-- Master degree (2023-Now), Software Engineering, University of Melbourne, Australia \\
+- MSc (2023-Now), Software Engineering, University of Melbourne, Australia \\
   Thesis title: "Enhancing Approximate Conformance Checking Accuracy with Hierarchical Clustering Model Behaviour Sampling", advised by 
   [Artem Polyvyanyy](http://polyvyanyy.com/){:target="_blank"}.
   -   An e-copy of my thesis can be download via [[this link](./assets/thesis_yilin.pdf)]
 
 
-- Bachelor degree (2017-2021), Computer Science and Technology, Zhengzhou University, China
+- BSc (2017-2021), Computer Science and Technology, Zhengzhou University, China
   Thesis title: "Research on Cell Virtual Staining Method Based on U-GAT-IT" (In Chinese), advised by
   [Ruijie Zhu](http://www7.zzu.edu.cn/csai/info/1054/1320.htm){:target="_blank"}. 
   -   Selected as an Outstanding Graduate Thesis.

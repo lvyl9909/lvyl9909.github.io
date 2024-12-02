@@ -1,12 +1,12 @@
 ---
 layout: page
-title: Network
-permalink: /network/
+title: Interest
+permalink: /interest/
 nav: true
 nav_order: 5
 ---
 
-Below is my network🌐. Zoom-in to explore it!
+Below is my interest network🌐. Zoom-in to explore it!
 
 <svg id="graph" width="1000" height="800"></svg>
 
