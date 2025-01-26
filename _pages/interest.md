@@ -24,6 +24,8 @@ Below is my interest network🌐. Zoom-in to explore it!
     {id: 'Cybersecurity', group: 'Cybersecurity', parent: 'Research'},
     {id: 'Computer Modeling', group: 'Computer Modeling', parent: 'Research'},
     {id: 'Machine Learning', group: 'Machine Learning', parent: 'Research'},
+    {id: 'Knowledge Representation and Reasoning', group: 'Knowledge Representation and Reasoning', parent: 'Research'},
+    {id: 'Logic Education', group: 'Logic Education', parent: 'Research'},
 
     // 第二层级 - Industry的子类
     {id: 'Network Security', group: 'Network Security', parent: 'Industry'},
