@@ -6,4 +6,4 @@ related_posts: false
 pinned: false
 ---
 
-- It is a great honor to be awarded the potential PhD position of US $50,000 annual scholarship plus free tuition by Dr. Zhang Yuanlin at TTU!
+- It is a great honor to be awarded a potential PhD position of US $50,000 annual scholarship plus free tuition by Dr. Zhang Yuanlin at TTU!

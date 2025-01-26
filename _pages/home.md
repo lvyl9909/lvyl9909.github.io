@@ -19,23 +19,20 @@ social: true
 
 I am currently a Master’s student in Software Engineering at the University of 
 Melbourne (Unimelb), Australia. I'm interested in process-aware data science, computer 
-modelling and machine learning.
+modelling and machine learning. As a software engineering master, I'm also involved in building open-source 
+well-documented software. Throughout the project, I excelled as team leader, overseeing workflow coordination,
+facilitating communication, and actively participating in all phases of development.
 
 I am currently working as a Research Assistant at Texas Tech University, focusing on integrating 
-generative AI (GenAI), logic, and processes in education to enhance teaching quality and
-learning outcome. 
+generative AI, logic, and processes in education to enhance teaching quality and
+learning outcome. My current research interests center on the combination of GenAI, logic, and 
+process mining in education. 
 
-My current research interests center on the combination of GenAI, logic, and 
-process mining in education. Next semester, I will collaborate with Dr. Abel Armas 
+Next semester, I will collaborate with Dr. Abel Armas 
 Cervantes on a research project titled “Looking at LMS through a Process Lens,” which explores the
 application of process mining in education.
 
-My previous research focuses on developing advanced algorithms for approximate conformance
-checking between process execution data and models[[read more](/projects/hierarchical.md)].
 
-As a software engineering master, I'm also involved in building open-source well-documented software.
-Throughout the project, I excelled as team leader, overseeing workflow coordination, facilitating 
-communication, and actively participating in all phases of development.
 
 
 [//]: # (I'm a member of the [Explainable Analytics for Machine Intelligence &#40;XAMI&#41;)
