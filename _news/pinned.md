@@ -6,4 +6,4 @@ related_posts: false
 pinned: false
 ---
 
-- I have created a discussion group on process mining for junior scholar. If you're interested in joining, please contact me 💬!
+- It is a great honor to be awarded the potential PhD position of US $50,000 annual scholarship plus free tuition by Dr. Zhang Yuanlin at TTU!
