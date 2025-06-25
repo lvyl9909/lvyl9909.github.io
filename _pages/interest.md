@@ -6,7 +6,7 @@ nav: true
 nav_order: 5
 ---
 
-Below is my interest network🌐. Zoom-in to explore it!
+Here is my interest network. <strong>Zoom-in</strong> to explore it!
 
 <svg id="graph" width="1000" height="800"></svg>
 
@@ -26,6 +26,7 @@ Below is my interest network🌐. Zoom-in to explore it!
     {id: 'Machine Learning', group: 'Machine Learning', parent: 'Research'},
     {id: 'Knowledge Representation and Reasoning', group: 'Knowledge Representation and Reasoning', parent: 'Research'},
     {id: 'Logic Education', group: 'Logic Education', parent: 'Research'},
+    {id: 'AI in Education', group: 'AI in Education', parent: 'Research'},
 
     // 第二层级 - Industry的子类
     {id: 'Network Security', group: 'Network Security', parent: 'Industry'},
@@ -63,6 +64,10 @@ Below is my interest network🌐. Zoom-in to explore it!
     {id: 'Process Prediction', group: 'Process Prediction', parent: 'Process Mining'},
     {id: 'Conformance Checking', group: 'Conformance Checking', parent: 'Process Mining'},
     {id: 'Anomaly Detection', group: 'Anomaly Detection', parent: 'Process Mining'},
+    // 第四层级 - Process Discovery的子类
+    {id: 'Fuzzy Miner', group: 'Fuzzy Miner', parent: 'Process Discovery'},
+    {id: 'Heuristic Miner', group: 'Heuristic Miner', parent: 'Process Discovery'},
+    {id: 'Stochastic Process Miner', group: 'Stochastic Process Miner', parent: 'Process Discovery'},
     // 第四层级 - Conformance Checking的子类
     {id: 'Sampling Approximation', group: 'Sampling Approximation', parent: 'Conformance Checking'},
     {id: 'RNN-based Approximation', group: 'RNN-based Approximation', parent: 'Conformance Checking'},
@@ -70,6 +75,11 @@ Below is my interest network🌐. Zoom-in to explore it!
     // 第三层级 - Software Testing的子类
     {id: 'Fuzzing', group: 'Fuzzing', parent: 'Testing'},
     {id: 'V model', group: 'V model', parent: 'Testing'},
+    // 第三层级 - AI in Education 的子类
+    {id: 'Self-Regulated Learning (SRL)', group: 'SRL', parent: 'AI in Education'},
+    {id: 'Chatbot-based Learning', group: 'Chatbot-based Learning', parent: 'AI in Education'},
+    {id: 'GenAI-powered Scaffolding', group: 'GenAI Scaffolding', parent: 'AI in Education'},
+    {id: 'Process Mining in Education', group: 'Process Mining in Education', parent: 'AI in Education'},
     // 第三层级 - Framework的子类
     {id: 'React', group: 'React', parent: 'Framework'},
     {id: 'Vue', group: 'Vue', parent: 'Framework'},
@@ -89,6 +99,7 @@ Below is my interest network🌐. Zoom-in to explore it!
       {source: 'Research', target: 'Cybersecurity'},
       {source: 'Research', target: 'Computer Modeling'},
       {source: 'Research', target: 'Machine Learning'},
+      {source: 'Research', target: 'AI in Education'},
       
       {source: 'Industry', target: 'Network Security'},
       {source: 'Industry', target: 'Web Application'},
@@ -134,8 +145,17 @@ Below is my interest network🌐. Zoom-in to explore it!
       {source: 'Clustering', target: 'Conformance Checking'},
       {source: 'RNN', target: 'RNN-based Approximation'},
       {source: 'Mamba', target: 'RNN-based Approximation'},
+      {source: 'Process Mining', target: 'Process Mining in Education'},
 
-    
+    // 连接第三层级 SRL 等
+      {source: 'AI in Education', target: 'Self-Regulated Learning (SRL)'},
+      {source: 'AI in Education', target: 'Chatbot-based Learning'},
+      {source: 'AI in Education', target: 'GenAI-powered Scaffolding'},
+      {source: 'AI in Education', target: 'Process Mining in Education'},
+
+      {source: 'Fuzzy Miner', target: 'Process Mining in Education'},
+      {source: 'Stochastic Process Miner', target: 'Process Mining in Education'},
+
       // 第四层级 - Conformance Checking的子类
       {source: 'Conformance Checking', target: 'Sampling Approximation'},
       {source: 'Conformance Checking', target: 'RNN-based Approximation'},
