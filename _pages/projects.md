@@ -7,6 +7,15 @@ nav: true
 nav_order: 2
 ---
 
+<style>
+  .grid-item { display: none; }
+</style>
+<noscript>
+  <style>
+    .grid-item { display: block; }
+  </style>
+</noscript>
+
 <div class="toggle-container">
   <label class="toggle-switch">
     <input type="checkbox" id="toggleSwitch" class="toggle-switch-checkbox">
@@ -16,7 +25,6 @@ nav_order: 2
     </span>
   </label>
 </div>
-
 
 <div class="projects grid" id="projectsContainer">
   {% assign sorted_projects = site.projects | sort: "importance" %}
@@ -43,31 +51,59 @@ nav_order: 2
   {% endfor %}
 </div>
 
+<div id="paginationContainer" class="mt-3 text-center"></div>
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const toggleSwitch = document.getElementById("toggleSwitch");
   const projectsContainer = document.getElementById("projectsContainer");
+  const paginationContainer = document.getElementById("paginationContainer");
+  const itemsPerPage = 3;
+  let currentCategory = "research";
 
-  function filterProjects(category) {
-    const projects = projectsContainer.querySelectorAll(".grid-item");
-    projects.forEach(project => {
-      if (project.getAttribute("data-category") === category) {
-        project.style.display = "block"; // 显示符合条件的项目
-      } else {
-        project.style.display = "none"; // 完全隐藏不符合条件的项目
+  function displayPage(category, pageNumber) {
+    const projects = Array.from(projectsContainer.querySelectorAll(".grid-item"))
+      .filter(project => project.getAttribute("data-category") === category);
+
+    const totalPages = Math.ceil(projects.length / itemsPerPage) || 1;
+    const start = (pageNumber - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+
+    Array.from(projectsContainer.querySelectorAll(".grid-item")).forEach(project => {
+      project.style.display = "none";
+    });
+
+    projects.forEach((project, index) => {
+      if (index >= start && index < end) {
+        project.style.display = "block";
       }
     });
+
+    renderPagination(totalPages, pageNumber, category);
+
+    if (typeof window.$grid !== "undefined") {
+      window.$grid.masonry("layout");
+    }
   }
 
-  filterProjects("research");
+   function renderPagination(totalPages, currentPage, category) {
+    paginationContainer.innerHTML = "";
+    if (totalPages <= 1) return;
+    for (let i = 1; i <= totalPages; i++) {
+      const btn = document.createElement("button");
+      btn.className = "btn btn-sm mx-1 " + (i === currentPage ? "btn-primary" : "btn-outline-secondary");
+      btn.textContent = i;
+      btn.addEventListener("click", () => displayPage(category, i));
+      paginationContainer.appendChild(btn);
+    }
+  }
 
   toggleSwitch.addEventListener("change", function () {
-    if (toggleSwitch.checked) {
-      filterProjects("development");
-    } else {
-      filterProjects("research");
-    }
+    currentCategory = toggleSwitch.checked ? "development" : "research";
+    displayPage(currentCategory, 1);
   });
+
+  displayPage(currentCategory, 1);
 });
 </script>
 
