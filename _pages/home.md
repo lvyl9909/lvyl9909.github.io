@@ -18,11 +18,11 @@ social: true
 ---
 
 I am currently a Master’s student in Software Engineering at the [University of 
-Melbourne](https://www.unimelb.edu.au/){:target="_blank"}, Australia. I'm interested in applications of Artificial intelligent (AI) in education and process-aware data science. 
-As a skilled software engineering master, I consistently served as the team leader, responsible for project management and core feature development.
+Melbourne](https://www.unimelb.edu.au/){:target="_blank"}, Australia. I'm interested in applications of Artificial intelligent (AI) in education and process-aware data science, though I remain enthusiastic about all areas of computer science.
+As a skilled software engineering master, I consistently served as the team leader, responsible for project management and core function development.
 
 Between Dec 2024 and Apr 2025, I served as a Research Assistant in Professor [Yuanlin Zhang](https://www.depts.ttu.edu/stem/membership/member_bios/yuanlin_zhang.php/){:target="_blank"}’s group
-at [Texas Tech University](http://ttu.edu/){:target="_blank"}, exploring how GenAI and logic can together improve K-12 education.
+at [Texas Tech University](http://ttu.edu/){:target="_blank"}, exploring how AI and logic can together improve K-12 education.
 
 
 [//]: # (I'm a member of the [Explainable Analytics for Machine Intelligence &#40;XAMI&#41;)
@@ -33,18 +33,18 @@ at [Texas Tech University](http://ttu.edu/){:target="_blank"}, exploring how Gen
 
 #### Education
 
-- <strong>MSc (2023-Now), Software Engineering, University of Melbourne, Australia.</strong> \\
-  - Expected to graduate with H1 (First-Class Honour)
+- <strong style="font-weight: 800;">MSc (2023-Now), Software Engineering, University of Melbourne, Australia.</strong> \\
+  - Expected to graduate with H1 (First-Class Honour).
   - Thesis1 (2025 semester1): "Discovering Self-Regulated Learning Patterns in Chatbot-Powered
   Education Environment", advised by
   [Abel Armas Cervantes](https://findanexpert.unimelb.edu.au/profile/822941-abel-armas-cervantes/){:target="_blank"} and [Antonette Mendoza](https://findanexpert.unimelb.edu.au/profile/6868-antonette-mendoza/){:target="_blank"}.
-    - This thesis is currently under submission.
+    - This thesis is currently under review.
   - Thesis2 (2024 semester2): "Enhancing Approximate Conformance Checking Accuracy with Hierarchical Clustering Model Behaviour Sampling", advised by 
   [Artem Polyvyanyy](http://polyvyanyy.com/){:target="_blank"}. 
     - An e-copy of my thesis can be download via [[this link](./assets/thesis_yilin.pdf)].
 
 - <strong>BSc (2017-2021), Computer Science and Technology, [Zhengzhou University](https://www.zzu.edu.cn/){:target="_blank"}, China. </strong>\\
-  - Graduated in the top 10% (Rank: 15/176)
+  - Graduated in the top 10% (Rank: 15/176).
   - Thesis title: "Research on Cell Virtual Staining Method Based on U-GAT-IT" (In Chinese), advised by
   [Ruijie Zhu](http://www7.zzu.edu.cn/csai/info/1054/1320.htm){:target="_blank"}. 
     -   Selected as an Outstanding Graduate Thesis.
@@ -59,7 +59,7 @@ at [Texas Tech University](http://ttu.edu/){:target="_blank"}, exploring how Gen
 #### Why I'm Outstanding
 
 - 🚀 **Highly Self-Driven with Passion for Research**  
-  Despite being in a coursework-based Master's program, I actively engaged in research projects. Within the latest year, I contributed as the **first or second author** to **3 EI/Scopus-indexed journal papers** and **4 IEEE conference papers**. I maintain a strong work ethic with an average of **14 hours of daily study and research**.
+  Despite being in a coursework-based Master's program, I actively engaged in research projects. **Within the latest year, I contributed as the first or second author to 3 EI/Scopus-indexed journal papers and 4 IEEE conference papers**. I maintain a strong work ethic with an average of **14 hours of daily study and research**.
 
 - 👨‍💻 **Strong Project Management and Engineering Foundation**  
   I have consistently led software engineering projects as **scrum master**, responsible for both **management and core development**. Proficient in project management tools like **Jira** and **ZenTao** and programming languages like **Java** and **Python**.

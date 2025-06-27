@@ -1,9 +1,9 @@
 ---
 layout: post
-date: August 2024
+date: June 2025
 inline: true
 related_posts: false
 pinned: false
 ---
 
-- It is a great honor to be awarded a potential PhD position of US $49,235 annual scholarship plus free tuition by Dr. Zhang Yuanlin at TTU!
+- **I am currently seeking a suitable PhD position and am open to challenges across different research domains!**
