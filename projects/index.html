@@ -236,7 +236,17 @@
   </header>
 
   <article>
-    <div class="toggle-container">
+    <style>
+  .grid-item { display: none; }
+</style>
+
+<noscript>
+  <style>
+    .grid-item { display: block; }
+  </style>
+</noscript>
+
+<div class="toggle-container">
   <label class="toggle-switch">
     <input type="checkbox" id="toggleSwitch" class="toggle-switch-checkbox" />
     <span class="toggle-switch-label">
@@ -278,23 +288,6 @@
         <div class="card-body">
           <h2 class="card-title">Enhancing Approximate Conformance Checking Accuracy with Hierarchical Clustering Model Behaviour Sampling</h2>
           <p class="card-text text-secondary">Existing model sampling-based methods for approximate conformance checking lack sufficient accuracy. This study  proposes new hierarchical clustering approaches to improve approximation, achieving results closer to exact values.
-</p>
-        </div>
-      </div>
-    </a>
-  </div>
-  
-  
-  
-  <div class="grid-item development" data-category="development">
-    
-    <a href="/projects/omm">
-    
-      <div class="card hoverable">
-        
-        <div class="card-body">
-          <h2 class="card-title">Organizational Model Mining</h2>
-          <p class="card-text text-secondary">Event logs can be a promising source for discovering knowledge on  organizational structures and empowering workforce analytics. Novel process  mining methods unlock this opportunity.
 </p>
         </div>
       </div>
@@ -353,33 +346,78 @@
   </div>
   
   
+  
+  <div class="grid-item research" data-category="research">
+    
+    <a href="/projects/srl">
+    
+      <div class="card hoverable">
+        
+        <div class="card-body">
+          <h2 class="card-title">Discovering Self-Regulated Learning Patterns in Chatbot-Based Learning Environment</h2>
+          <p class="card-text text-secondary">This study proposes a novel behavioral framework (Gen-SRL) and process mining approach to discover self-regulated learning (SRL) patterns in ChatGPT-powered education, revealing imbalances and non-linear sequences in students' learning strategies.
+</p>
+        </div>
+      </div>
+    </a>
+  </div>
+  
+  
 </div>
+
+<div id="paginationContainer" class="mt-3 text-center"></div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const toggleSwitch = document.getElementById("toggleSwitch");
   const projectsContainer = document.getElementById("projectsContainer");
+  const paginationContainer = document.getElementById("paginationContainer");
+  const itemsPerPage = 3;
+  let currentCategory = "research";
 
-  function filterProjects(category) {
-    const projects = projectsContainer.querySelectorAll(".grid-item");
-    projects.forEach(project => {
-      if (project.getAttribute("data-category") === category) {
-        project.style.display = "block"; // 显示符合条件的项目
-      } else {
-        project.style.display = "none"; // 完全隐藏不符合条件的项目
+  function displayPage(category, pageNumber) {
+    const projects = Array.from(projectsContainer.querySelectorAll(".grid-item"))
+      .filter(project => project.getAttribute("data-category") === category);
+
+    const totalPages = Math.ceil(projects.length / itemsPerPage) || 1;
+    const start = (pageNumber - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+
+    Array.from(projectsContainer.querySelectorAll(".grid-item")).forEach(project => {
+      project.style.display = "none";
+    });
+
+    projects.forEach((project, index) => {
+      if (index >= start && index < end) {
+        project.style.display = "block";
       }
     });
+
+    renderPagination(totalPages, pageNumber, category);
+
+    if (typeof window.$grid !== "undefined") {
+      window.$grid.masonry("layout");
+    }
   }
 
-  filterProjects("research");
+   function renderPagination(totalPages, currentPage, category) {
+    paginationContainer.innerHTML = "";
+    if (totalPages <= 1) return;
+    for (let i = 1; i <= totalPages; i++) {
+      const btn = document.createElement("button");
+      btn.className = "btn btn-sm mx-1 " + (i === currentPage ? "btn-primary" : "btn-outline-secondary");
+      btn.textContent = i;
+      btn.addEventListener("click", () => displayPage(category, i));
+      paginationContainer.appendChild(btn);
+    }
+  }
 
   toggleSwitch.addEventListener("change", function () {
-    if (toggleSwitch.checked) {
-      filterProjects("development");
-    } else {
-      filterProjects("research");
-    }
+    currentCategory = toggleSwitch.checked ? "development" : "research";
+    displayPage(currentCategory, 1);
   });
+
+  displayPage(currentCategory, 1);
 });
 </script>
 
