@@ -12,101 +12,155 @@ Here is my interest network. <strong>Zoom-in</strong> to explore it!
 
 <script src="https://d3js.org/d3.v7.min.js"></script>
 
-<script>const data = {
-  nodes: [
-    // 第一层级
-    {id: 'Research', group: 'Research', color: '#1E90FF', r: 200},
-    {id: 'Industry', group: 'Industry', color: '#FFD700', r: 200},
-    {id: 'Programming', group: 'Programming', color: '#8A2BE2', r: 200},
-    {id: 'Software Tech', group: 'Software Tech', color: '#FF6347', r: 200},
-    // 第二层级 - Research的子类
-    {id: 'Process Mining', group: 'Process Mining', parent: 'Research'},
-    {id: 'Cybersecurity', group: 'Cybersecurity', parent: 'Research'},
-    {id: 'Computer Modeling', group: 'Computer Modeling', parent: 'Research'},
-    {id: 'Machine Learning', group: 'Machine Learning', parent: 'Research'},
-    {id: 'Knowledge Representation and Reasoning', group: 'Knowledge Representation and Reasoning', parent: 'Research'},
-    {id: 'Logic Education', group: 'Logic Education', parent: 'Research'},
-    {id: 'AI in Education', group: 'AI in Education', parent: 'Research'},
+<!--
+INSTRUCTIONS:
+- To add a new interest, simply edit _data/interests.yml and add your node in the correct place.
+- The visualization will update automatically based on the YAML structure.
+- The YAML data is injected into this page using Jekyll/Liquid.
+-->
 
-    // 第二层级 - Industry的子类
-    {id: 'Network Security', group: 'Network Security', parent: 'Industry'},
-    {id: 'Web Application', group: 'Web Application', parent: 'Industry'},
-    {id: 'Maven', group: 'Maven', parent: 'Web Application'},
+<script>
+// interests data injected by Jekyll/Liquid
+const interests = {{ site.data.interests | jsonify }};
 
-    // 第二层级 - Programming的子类
-    {id: 'C++', group: 'C++', parent: 'Programming'},
-    {id: 'Ada', group: 'Ada', parent: 'Programming'},
-    {id: 'Alloy', group: 'Alloy', parent: 'Programming'},
-    {id: 'Python', group: 'Python', parent: 'Programming'},
-    {id: 'Java', group: 'Java', parent: 'Programming'},
-    {id: 'Javascript', group: 'Javascript', parent: 'Programming'},
-    {id: 'HTML', group: 'HTML', parent: 'Programming'},
-    {id: 'Typescript', group: 'Typescript', parent: 'Programming'},
-    {id: 'PHP', group: 'PHP', parent: 'Programming'},
-    {id: 'MATLAB', group: 'MATLAB', parent: 'Programming'},
-    // 第二层级 - Software Tech的子类
-    {id: 'Testing', group: 'Software Testing', parent: 'Software Tech'},
-    {id: 'Project Management', group: 'Software Project Management', parent: 'Software Tech'},
-    {id: 'Architecture', group: 'Software Architecture', parent: 'Software Tech'},
-    {id: 'Framework', group: 'Framework', parent: 'Software Tech'},
-    //第三层级 - Machine Learning的子类
-    {id: 'Generative Adversarial Networks', group: 'Generative Adversarial Networks', parent: 'Machine Learning'},
-    {id: 'Graph Neural Networks', group: 'Graph Neural Networks', parent: 'Machine Learning'},
-    {id: 'Time Series Analysis', group: 'Time Series Analysis', parent: 'Machine Learning'}, 
-    {id: 'Clustering', group: 'Clustering', parent: 'Machine Learning'}, 
-    //第四层级 - Sequence Model的子类
-    {id: 'RNN', group: 'RNN', parent: 'Time Series Analysis'},    
-    {id: 'LSTM', group: 'LSTM', parent: 'Time Series Analysis'},
-    {id: 'Transformer', group: 'Transformer', parent: 'Time Series Analysis'},
-    {id: 'Mamba', group: 'Mamba', parent: 'Time Series Analysis'},   
-    // 第三层级 - Process Mining的子类
-    {id: 'Process Discovery', group: 'Process Discovery', parent: 'Process Mining'},
-    {id: 'Process Prediction', group: 'Process Prediction', parent: 'Process Mining'},
-    {id: 'Conformance Checking', group: 'Conformance Checking', parent: 'Process Mining'},
-    {id: 'Anomaly Detection', group: 'Anomaly Detection', parent: 'Process Mining'},
-    // 第四层级 - Process Discovery的子类
-    {id: 'Fuzzy Miner', group: 'Fuzzy Miner', parent: 'Process Discovery'},
-    {id: 'Heuristic Miner', group: 'Heuristic Miner', parent: 'Process Discovery'},
-    {id: 'Stochastic Process Miner', group: 'Stochastic Process Miner', parent: 'Process Discovery'},
-    // 第四层级 - Conformance Checking的子类
-    {id: 'Sampling Approximation', group: 'Sampling Approximation', parent: 'Conformance Checking'},
-    {id: 'RNN-based Approximation', group: 'RNN-based Approximation', parent: 'Conformance Checking'},
-    {id: 'Stochastic Conformance Checking', group: 'Stochastic Conformance Checking', parent: 'Conformance Checking'},
-    // 第三层级 - Software Testing的子类
-    {id: 'Fuzzing', group: 'Fuzzing', parent: 'Testing'},
-    {id: 'V model', group: 'V model', parent: 'Testing'},
-    // 第三层级 - AI in Education 的子类
-    {id: 'Self-Regulated Learning (SRL)', group: 'SRL', parent: 'AI in Education'},
-    {id: 'Chatbot-based Learning', group: 'Chatbot-based Learning', parent: 'AI in Education'},
-    {id: 'GenAI-powered Scaffolding', group: 'GenAI Scaffolding', parent: 'AI in Education'},
-    {id: 'Process Mining in Education', group: 'Process Mining in Education', parent: 'AI in Education'},
-    // 第三层级 - Framework的子类
-    {id: 'React', group: 'React', parent: 'Framework'},
-    {id: 'Vue', group: 'Vue', parent: 'Framework'},
-    {id: 'Django', group: 'Django', parent: 'Framework'},
-    {id: 'Servlet', group: 'Servlet', parent: 'Framework'},
-    {id: 'Next.js', group: 'Next.js', parent: 'Framework'},
-    {id: 'TensorFlow', group: 'TensorFlow', parent: 'Framework'},
-    {id: 'PyTorch', group: 'PyTorch', parent: 'Framework'},
-    // 第四层级 - Fuzzing的子类
-    {id: 'AFLNet', group: 'AFLNet', parent: 'Fuzzing'},
-    {id: 'LibFuzzer', group: 'LibFuzzer', parent: 'Fuzzing'}
-  ],
+// Helper function: recursively traverse YAML tree to build nodes and links
+function traverse(node, parent = null, nodes = [], links = []) {
+  const {id, color, children} = node;
+  const nodeObj = {id, group: id, color, parent: parent ? parent.id : undefined};
+  nodes.push(nodeObj);
+  if (parent) {
+    links.push({source: parent.id, target: id});
+  }
+  if (children) {
+    children.forEach(child => traverse(child, nodeObj, nodes, links));
+  }
+  return {nodes, links};
+}
 
-  links: [
-      // 第一层级的连接
+let nodes = [], links = [];
+interests.forEach(root => {
+  const result = traverse(root);
+  nodes = nodes.concat(result.nodes);
+  links = links.concat(result.links);
+});
+
+// Add cross-domain connections based on knowledge
+const crossDomainLinks = [
+  // Programming -> Research connections
+  {source: 'Python', target: 'Process Mining'},
+  {source: 'Python', target: 'Machine Learning'},
+  {source: 'Python', target: 'Computer Modeling'},
+  {source: 'Python', target: 'Conformance Checking'},
+  {source: 'Java', target: 'Process Mining'},
+  {source: 'Java', target: 'Architecture'},
+  {source: 'C++', target: 'Computer Modeling'},
+  {source: 'MATLAB', target: 'Computer Modeling'},
+  {source: 'Alloy', target: 'Computer Modeling'},
+  {source: 'Ada', target: 'Cybersecurity'},
+  {source: 'Javascript', target: 'Web Application'},
+  {source: 'HTML', target: 'Web Application'},
+  {source: 'Typescript', target: 'Web Application'},
+  {source: 'PHP', target: 'Project Management'},
+  
+  // Programming -> Software Tech connections
+  {source: 'Python', target: 'TensorFlow'},
+  {source: 'Python', target: 'PyTorch'},
+  {source: 'Java', target: 'Servlet'},
+  {source: 'Javascript', target: 'React'},
+  {source: 'Javascript', target: 'Vue'},
+  {source: 'Typescript', target: 'React'},
+  {source: 'HTML', target: 'React'},
+  {source: 'HTML', target: 'Vue'},
+  
+  // Research -> Software Tech connections
+  {source: 'Machine Learning', target: 'TensorFlow'},
+  {source: 'Machine Learning', target: 'PyTorch'},
+  {source: 'Time Series Analysis', target: 'TensorFlow'},
+  {source: 'Time Series Analysis', target: 'PyTorch'},
+  {source: 'RNN', target: 'PyTorch'},
+  {source: 'LSTM', target: 'PyTorch'},
+  {source: 'Transformer', target: 'TensorFlow'},
+  {source: 'Transformer', target: 'PyTorch'},
+  {source: 'Mamba', target: 'PyTorch'},
+  {source: 'Generative Adversarial Networks', target: 'TensorFlow'},
+  {source: 'Graph Neural Networks', target: 'PyTorch'},
+  {source: 'Clustering', target: 'Process Discovery'},
+  {source: 'Clustering', target: 'Conformance Checking'},
+  {source: 'RNN', target: 'RNN-based Approximation'},
+  {source: 'Mamba', target: 'RNN-based Approximation'},
+  {source: 'Graph Neural Networks', target: 'Anomaly Detection'},
+  {source: 'Conformance Checking', target: 'Generative Adversarial Networks'},
+  {source: 'Conformance Checking', target: 'Graph Neural Networks'},
+  
+  // Industry connections
+  {source: 'Network Security', target: 'Cybersecurity'},
+  {source: 'Web Application', target: 'V model'},
+  {source: 'Web Application', target: 'Project Management'},
+  {source: 'Maven', target: 'Java'},
+  
+  // Software Tech -> Research connections
+  {source: 'Fuzzing', target: 'TensorFlow'},
+  {source: 'Fuzzing', target: 'PyTorch'},
+  {source: 'Testing', target: 'V model'},
+  {source: 'Framework', target: 'Django'},
+  {source: 'Framework', target: 'Servlet'},
+  {source: 'Framework', target: 'Next.js'},
+  {source: 'Framework', target: 'TensorFlow'},
+  {source: 'Framework', target: 'PyTorch'},
+  
+  // Additional cross-domain connections
+  {source: 'Programming', target: 'Machine Learning'},
+  {source: 'Programming', target: 'Cybersecurity'},
+  {source: 'Programming', target: 'Process Mining'},
+  {source: 'Programming', target: 'Software Tech'},
+  {source: 'Industry', target: 'Project Management'},
+  {source: 'Research', target: 'AI in Education'},
+  {source: 'Logic Education', target: 'AI in Education'},
+  {source: 'Process Mining', target: 'Process Mining in Education'},
+  {source: 'Fuzzy Miner', target: 'Process Mining in Education'},
+  {source: 'Stochastic Process Miner', target: 'Process Mining in Education'},
+  {source: 'AI in Education', target: 'Self-Regulated Learning (SRL)'},
+  {source: 'AI in Education', target: 'Chatbot-based Learning'},
+  {source: 'AI in Education', target: 'GenAI-powered Scaffolding'},
+  {source: 'AI in Education', target: 'Process Mining in Education'},
+  {source: 'Conformance Checking', target: 'Sampling Approximation'},
+  {source: 'Conformance Checking', target: 'RNN-based Approximation'},
+  {source: 'Conformance Checking', target: 'Stochastic Conformance Checking'},
+  {source: 'Testing', target: 'Fuzzing'},
+  {source: 'Fuzzing', target: 'AFLNet'},
+  {source: 'Fuzzing', target: 'LibFuzzer'},
+  {source: 'Framework', target: 'React'},
+  {source: 'Framework', target: 'Vue'},
+  {source: 'Framework', target: 'Django'},
+  {source: 'Framework', target: 'Servlet'},
+  {source: 'Framework', target: 'Next.js'},
+  {source: 'Framework', target: 'TensorFlow'},
+  {source: 'Framework', target: 'PyTorch'},
+  {source: 'Machine Learning', target: 'Generative Adversarial Networks'},
+  {source: 'Machine Learning', target: 'Graph Neural Networks'},
+  {source: 'Machine Learning', target: 'Time Series Analysis'},
+  {source: 'Machine Learning', target: 'Clustering'},
+  {source: 'Time Series Analysis', target: 'RNN'},
+  {source: 'Time Series Analysis', target: 'LSTM'},
+  {source: 'Time Series Analysis', target: 'Transformer'},
+  {source: 'Time Series Analysis', target: 'Mamba'},
+  {source: 'Process Mining', target: 'Process Discovery'},
+  {source: 'Process Mining', target: 'Process Prediction'},
+  {source: 'Process Mining', target: 'Conformance Checking'},
+  {source: 'Process Mining', target: 'Anomaly Detection'},
+  {source: 'Process Discovery', target: 'Fuzzy Miner'},
+  {source: 'Process Discovery', target: 'Heuristic Miner'},
+  {source: 'Process Discovery', target: 'Stochastic Process Miner'},
       {source: 'Research', target: 'Process Mining'},
       {source: 'Research', target: 'Cybersecurity'},
       {source: 'Research', target: 'Computer Modeling'},
       {source: 'Research', target: 'Machine Learning'},
+  {source: 'Research', target: 'Knowledge Representation and Reasoning'},
+  {source: 'Research', target: 'Logic Education'},
       {source: 'Research', target: 'AI in Education'},
-      
       {source: 'Industry', target: 'Network Security'},
       {source: 'Industry', target: 'Web Application'},
       {source: 'Industry', target: 'Project Management'},
-      {source: 'Web Application', target: 'Maven'},
-      {source: 'Java', target: 'Maven'},   
-
       {source: 'Programming', target: 'C++'},
       {source: 'Programming', target: 'Ada'},
       {source: 'Programming', target: 'Alloy'},
@@ -117,190 +171,51 @@ Here is my interest network. <strong>Zoom-in</strong> to explore it!
       {source: 'Programming', target: 'Typescript'},
       {source: 'Programming', target: 'PHP'},
       {source: 'Programming', target: 'MATLAB'},
-    
       {source: 'Software Tech', target: 'Testing'},
       {source: 'Software Tech', target: 'Project Management'},
       {source: 'Software Tech', target: 'Architecture'},
-      {source: 'Software Tech', target: 'Framework'},
+  {source: 'Software Tech', target: 'Framework'}
+];
 
-      // 第二层级 - Machine Learning的子类
-      {source: 'Machine Learning', target: 'Generative Adversarial Networks'},
-      {source: 'Machine Learning', target: 'Graph Neural Networks'},
-      {source: 'Machine Learning', target: 'Time Series Analysis'},
-      {source: 'Machine Learning', target: 'Clustering'},
-    
-      // 第三层级 - Time Series Analysis的子类
-      {source: 'Time Series Analysis', target: 'RNN'},
-      {source: 'Time Series Analysis', target: 'LSTM'},
-      {source: 'Time Series Analysis', target: 'Transformer'},
-      {source: 'Time Series Analysis', target: 'Mamba'},
-    
-      // 第三层级 - Process Mining的子类
-      {source: 'Process Mining', target: 'Process Discovery'},
-      {source: 'Process Mining', target: 'Process Prediction'},
-      {source: 'Process Mining', target: 'Conformance Checking'},
-      {source: 'Process Mining', target: 'Anomaly Detection'},
-      {source: 'Graph Neural Networks', target: 'Anomaly Detection'},
-      {source: 'Clustering', target: 'Process Discovery'},
-      {source: 'Clustering', target: 'Conformance Checking'},
-      {source: 'RNN', target: 'RNN-based Approximation'},
-      {source: 'Mamba', target: 'RNN-based Approximation'},
-      {source: 'Process Mining', target: 'Process Mining in Education'},
+// Combine original links with cross-domain links
+const allLinks = links.concat(crossDomainLinks);
 
-    // 连接第三层级 SRL 等
-      {source: 'AI in Education', target: 'Self-Regulated Learning (SRL)'},
-      {source: 'AI in Education', target: 'Chatbot-based Learning'},
-      {source: 'AI in Education', target: 'GenAI-powered Scaffolding'},
-      {source: 'AI in Education', target: 'Process Mining in Education'},
+renderGraph({nodes, links: allLinks});
 
-      {source: 'Fuzzy Miner', target: 'Process Mining in Education'},
-      {source: 'Stochastic Process Miner', target: 'Process Mining in Education'},
-
-      // 第四层级 - Conformance Checking的子类
-      {source: 'Conformance Checking', target: 'Sampling Approximation'},
-      {source: 'Conformance Checking', target: 'RNN-based Approximation'},
-      {source: 'Conformance Checking', target: 'Stochastic Conformance Checking'},
-    
-      // 第三层级 - Testing的子类
-      {source: 'Testing', target: 'Fuzzing'},
-      {source: 'Testing', target: 'V model'},
-     // 第三层级 - Framework的子类
-      {source: 'Framework', target: 'React'},
-      {source: 'Framework', target: 'Vue'},
-      {source: 'Framework', target: 'Django'},
-      {source: 'Framework', target: 'Servlet'},
-      {source: 'Framework', target: 'Next.js'},
-      {source: 'Framework', target: 'TensorFlow'},
-      {source: 'Framework', target: 'PyTorch'},
-      {source: 'Python', target: 'Django'},
-      {source: 'Vue', target: 'HTML'},
-      {source: 'React', target: 'HTML'},
-      {source: 'React', target: 'Javascript'},
-      {source: 'React', target: 'Typescript'},
-      {source: 'Servlet', target: 'Java'},
-      {source: 'PHP', target: 'Project Management'},
-    
-      // 第四层级 - Fuzzing的子类
-      {source: 'Fuzzing', target: 'AFLNet'},
-      {source: 'Fuzzing', target: 'LibFuzzer'},
-    
-      // **领域间的技术相关性连接**
-      // Time Series Analysis & Machine Learning
-      {source: 'Time Series Analysis', target: 'Generative Adversarial Networks'},
-      {source: 'Time Series Analysis', target: 'Graph Neural Networks'},
-      {source: 'Time Series Analysis', target: 'Clustering'},
-    
-      // Machine Learning 与 Frameworks 相关性
-      {source: 'Machine Learning', target: 'TensorFlow'},
-      {source: 'Machine Learning', target: 'PyTorch'},
-    
-      // RNN / LSTM / Transformer & Frameworks 相关性
-      {source: 'RNN', target: 'PyTorch'},
-      {source: 'LSTM', target: 'PyTorch'},
-      {source: 'Transformer', target: 'TensorFlow'},
-      {source: 'Transformer', target: 'PyTorch'},
-    
-      // Fuzzing & Machine Learning 相关性
-      {source: 'Fuzzing', target: 'TensorFlow'},
-      {source: 'Fuzzing', target: 'PyTorch'},
-    
-      // Conformance Checking & Machine Learning 相关性
-      {source: 'Conformance Checking', target: 'Generative Adversarial Networks'},
-      {source: 'Conformance Checking', target: 'Graph Neural Networks'},
-
-    // Industry & Other Categories
-    {source: 'Network Security', target: 'Cybersecurity'},
-  
-    // Programming & Other Categories
-    {source: 'Programming', target: 'Machine Learning'},
-    {source: 'Programming', target: 'Cybersecurity'},
-    {source: 'Programming', target: 'Process Mining'},
-    {source: 'Programming', target: 'Software Tech'},
-  
-    // Programming & Frameworks relationships
-    {source: 'Python', target: 'TensorFlow'},
-    {source: 'Python', target: 'PyTorch'},
-
-    {source: 'Alloy', target: 'Computer Modeling'},
-    {source: 'C++', target: 'Computer Modeling'},
-    {source: 'Java', target: 'Process Mining'},
-    {source: 'Python', target: 'Process Mining'},
-    {source: 'Python', target: 'Conformance Checking'},
-    {source: 'Java', target: 'Architecture'},
-    {source: 'MATLAB', target: 'Computer Modeling'},
-    {source: 'Web Application', target: 'V model'},
-    {source: 'Web Application', target: 'Project Management'}
-  ]
-};
-
-// Function to generate a random color, avoiding dark colors
-function getRandomColor() {
-  const min = 128; // Minimum value for color components to avoid dark colors
-  const max = 255; // Maximum value for color components
-  const r = Math.floor(Math.random() * (max - min + 1) + min); // Random red value
-  const g = Math.floor(Math.random() * (max - min + 1) + min); // Random green value
-  const b = Math.floor(Math.random() * (max - min + 1) + min); // Random blue value
-  
-  // Convert to hexadecimal color code
-  return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
-}
-
-
-// Assign random colors to second-level nodes, only if their parent is one of the first-level categories
-data.nodes.forEach(d => {
-  if (['Research', 'Industry', 'Programming', 'Software Tech'].includes(d.id)) {
-    d.r = 200; 
-  }
-  else if (d.parent && ['Research', 'Industry', 'Programming', 'Software Tech'].includes(d.parent)) {
-    d.color = getRandomColor(); // 给二级节点分配随机颜色
-    d.r = 100;  // 设置二级节点的半径为 80
-  }
-});
-
-data.nodes.forEach(d => {
-  let currentParent = d;
-  let parentCount = 0;
-
-  // 向上查找父节点的父节点的父节点，直到最多查三层
-  while (currentParent && parentCount < 3) {
-    currentParent = data.nodes.find(node => node.id === currentParent.parent);
-    parentCount++;
-
-    // 只有当查到父节点的父节点的父节点是目标之一时，才改变颜色
-    if (parentCount === 3 && currentParent && ['Research', 'Industry', 'Programming', 'Software Tech'].includes(currentParent.id)) {
-      // 将当前节点的颜色设置为浅灰色
-      d.color = '#D3D3D3';  // 浅灰色
-      break;  // 找到后不再继续向上查找
-    }
-  }
-});
-
-
+function renderGraph(data) {
   // 创建SVG元素
   const svg = d3.select("#graph");
-
   // 设置图谱的宽度和高度
   const width = +svg.attr("width");
   const height = +svg.attr("height");
 
+  // 设置SVG的transform scale固定为1.0
+  svg.style("transform", "scale(1.0)");
+  svg.style("transform-origin", "top left");
   // 创建缩放行为
   const zoom = d3.zoom()
-    .scaleExtent([0.2, 1]) // 设置缩放的范围
+    .scaleExtent([0.2, 3])
     .on("zoom", function(event) {
-      svgGroup.attr("transform", event.transform); // 根据缩放和移动来调整图形
+      svgGroup.attr("transform", event.transform);
     });
-    
-  svg.call(zoom); // 将缩放行为绑定到SVG
-
+  svg.call(zoom);
   // 创建一个容器组，用于存放所有图形
   const svgGroup = svg.append("g");
-
   // 设置力导向图的模拟布局
   const simulation = d3.forceSimulation(data.nodes)
-    .force("link", d3.forceLink(data.links).id(d => d.id).distance(150))  // 设置链接的距离
-    .force("charge", d3.forceManyBody().strength(-6000))  // 节点之间的排斥力
-    .force("center", d3.forceCenter(width / 2, height / 2));  // 设置图谱的中心
-
+    .force("link", d3.forceLink(data.links).id(d => d.id).distance(80))  // 减少链接距离，让节点更紧凑
+    .force("charge", d3.forceManyBody().strength(-8000))  // 增加排斥力，让节点分布更均匀
+    .force("center", d3.forceCenter(width / 2, height / 2))
+    .force("collision", d3.forceCollide().radius(d => {
+      // 为一级节点设置碰撞半径，让它们更紧凑
+      if (['Research', 'Industry', 'Programming', 'Software Tech'].includes(d.id)) {
+        return 250;  // 一级节点碰撞半径
+      } else if (d.parent && ['Research', 'Industry', 'Programming', 'Software Tech'].includes(d.parent)) {
+        return 150;  // 二级节点碰撞半径
+      } else {
+        return 80;   // 其他节点碰撞半径
+      }
+    }));
     const marker = svg.append("defs").selectAll("marker")
       .data(["arrow"])
       .enter().append("marker")
@@ -314,118 +229,144 @@ data.nodes.forEach(d => {
       .append("path")
       .attr("d", "M0,-5L10,0L0,5")
       .attr("fill", "#999");
-    
     const link = svgGroup.append("g")
       .selectAll(".link")
       .data(data.links)
       .enter().append("path")
       .attr("class", "link")
    .attr("stroke", function(d) {
-    // 查找连接线的源节点
     const sourceNode = data.nodes.find(node => node.id === d.source.id);
-
-    // 检查源节点是否是一级节点，如果是，则使用源节点的颜色
     if (sourceNode && ['Research', 'Industry', 'Programming', 'Software Tech'].includes(sourceNode.id)) {
-      return sourceNode.color;  // 使用源节点的颜色
+        return sourceNode.color;
     } else {
-      return "#999";  // 默认颜色
+        return "#999";
     }
   })
       .attr("stroke-width", 3)
       .attr("fill", "none")
       .attr("marker-end", "url(#arrow)");
-
-  // 创建图谱的节点
   const node = svgGroup.append("g")
     .selectAll(".node")
     .data(data.nodes)
     .enter().append("circle")
     .attr("class", "node")
-    .attr("r", d => d.r || 50)  // 大类节点的半径根据自定义的r值
-    .attr("fill", d => d.color || '#FAF0E6')  // 子类继承父类颜色或者使用默认的浅米色
+    .attr("r", d => {
+      // 根据层级设置节点大小
+      if (['Research', 'Industry', 'Programming', 'Software Tech'].includes(d.id)) {
+        return 200;  // 一级节点最大
+      } else if (d.parent && ['Research', 'Industry', 'Programming', 'Software Tech'].includes(d.parent)) {
+        return 120;  // 二级节点中等
+      } else {
+        return 50;   // 三级及以下节点最小（保持现在大小）
+      }
+    })
+    .attr("fill", d => {
+      // 为节点分配颜色，确保一级和二级节点颜色不重复
+      if (d.color) {
+        return d.color;  // 一级节点保持原有颜色
+      } else if (d.parent && ['Research', 'Industry', 'Programming', 'Software Tech'].includes(d.parent)) {
+        // 为二级节点分配不重复的颜色
+        const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7', '#DDA0DD', '#98D8C8', '#F7DC6F', '#BB8FCE', '#85C1E9', '#F39C12', '#E74C3C', '#9B59B6', '#3498DB', '#1ABC9C'];
+        const index = d.id.charCodeAt(0) % colors.length;
+        return colors[index];
+      } else {
+        return '#FAF0E6';  // 其他节点默认颜色
+      }
+    })
+    .attr("stroke", d => {
+      // 为一级节点添加特效边框
+      if (['Research', 'Industry', 'Programming', 'Software Tech'].includes(d.id)) {
+        return '#333';
+      }
+      return 'none';
+    })
+    .attr("stroke-width", d => {
+      // 为一级节点添加粗边框
+      if (['Research', 'Industry', 'Programming', 'Software Tech'].includes(d.id)) {
+        return 3;
+      }
+      return 0;
+    })
+    .style("filter", d => {
+      // 为一级节点添加阴影特效
+      if (['Research', 'Industry', 'Programming', 'Software Tech'].includes(d.id)) {
+        return 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))';
+      }
+      return 'none';
+    })
     .call(d3.drag()
       .on("start", dragStart)
       .on("drag", dragging)
       .on("end", dragEnd));
-
-    // 为每个节点添加标签
     svgGroup.append("g")
       .selectAll(".label")
       .data(data.nodes)
       .enter().append("text")
       .attr("class", "label")
-      .attr("text-anchor", "middle")  // 文本水平居中
+    .attr("text-anchor", "middle")
       .style("font-size", d => {
-        // 如果 id 为 'Research', 'Industry', 'Programming', 'Software Tech'，则设置字体大小为 50px
-        const largeFontIds = ['Research', 'Industry', 'Programming', 'Software Tech'];
-        return largeFontIds.includes(d.id) ? "60px" : "30px";  // 其他节点的字号为 30px
-      })
-      .text(d => d.id);  // 设置文本内容为节点的id
-
-
+      // 根据层级设置字体大小
+      if (['Research', 'Industry', 'Programming', 'Software Tech'].includes(d.id)) {
+        return "60px";  // 一级节点字体最大
+      } else if (d.parent && ['Research', 'Industry', 'Programming', 'Software Tech'].includes(d.parent)) {
+        return "40px";  // 二级节点字体中等
+      } else {
+        return "30px";  // 三级及以下节点字体最小（保持现在大小）
+      }
+    })
+    .text(d => d.id);
 // 监听点击事件
-// 创建一个对象来记录每个节点的展开状态
 const nodeState = {};
-
 node.on("click", function(event, d) {
   const parentNode = data.nodes.find(node => node.id === d.parent);
-
-  // 只有父节点有颜色且当前节点还没有展开时才执行
   if (parentNode && parentNode.color && !nodeState[d.id]) {
-    nodeState[d.id] = true;  // 标记该节点已经展开
-
-    // 展开子节点
+      nodeState[d.id] = true;
     node.each(function(child) {
       if (child.parent === d.id) {
-        // 展开子节点
         d3.select(this).style("display", "inline");
         d3.selectAll(".label")
           .filter(label => label.id === child.id)
           .style("display", "inline");
-
         link.filter(l => l.source.id === child.id || l.target.id === child.id)
           .style("display", "inline");
       }
     });
   }
 });
-
-
-
     simulation.on("tick", function() {
       link
         .attr("d", function(d) {
           const dx = d.target.x - d.source.x;
           const dy = d.target.y - d.source.y;
           const dr = Math.sqrt(dx * dx + dy * dy);
-          const curve = 0.1;  // Controls the curvature of the links
+        const curve = 0.1;
           return `M${d.source.x},${d.source.y}A${dr},${dr} 0 0,1 ${d.target.x},${d.target.y}`;
         });
-    
       node
         .attr("cx", d => d.x)
         .attr("cy", d => d.y);
-    
       svgGroup.selectAll(".label")
         .attr("x", d => d.x)
         .attr("y", d => d.y);
     });
-
-  // 拖动事件处理
   function dragStart(event, d) {
     if (!event.active) simulation.alphaTarget(0.3).restart();
     d.fx = d.x;
     d.fy = d.y;
   }
-
   function dragging(event, d) {
     d.fx = event.x;
     d.fy = event.y;
   }
-
   function dragEnd(event, d) {
     if (!event.active) simulation.alphaTarget(0);
     d.fx = null;
     d.fy = null;
   }
+}
+
+
+
+  // 设置默认zoom更小
+  svg.call(zoom.transform, d3.zoomIdentity.scale(0.6));
 </script>

@@ -1,0 +1,85 @@
+- id: Research
+  color: "#1E90FF"
+  children:
+    - id: Process Mining
+      children:
+        - id: Process Discovery
+          children:
+            - id: Fuzzy Miner
+            - id: Heuristic Miner
+            - id: Stochastic Process Miner
+        - id: Process Prediction
+        - id: Conformance Checking
+          children:
+            - id: Sampling Approximation
+            - id: RNN-based Approximation
+            - id: Stochastic Conformance Checking
+        - id: Anomaly Detection
+        - id: Process Mining in Education
+    - id: Cybersecurity
+    - id: Computer Modeling
+    - id: Machine Learning
+      children:
+        - id: Generative Adversarial Networks
+        - id: Graph Neural Networks
+        - id: Time Series Analysis
+          children:
+            - id: RNN
+            - id: LSTM
+            - id: Transformer
+            - id: Mamba
+        - id: Clustering
+    - id: Knowledge Representation and Reasoning
+    - id: Logic Education
+    - id: AI in Education
+      children:
+        - id: Self-Regulated Learning (SRL)
+        - id: Chatbot-based Learning
+        - id: GenAI-powered Scaffolding
+        - id: Process Mining in Education
+        - id: Learning Analytics
+
+- id: Industry
+  color: "#FFD700"
+  children:
+    - id: Network Security
+    - id: Web Application
+      children:
+        - id: Maven
+    - id: Project Management
+
+- id: Programming
+  color: "#8A2BE2"
+  children:
+    - id: C++
+    - id: Ada
+    - id: Alloy
+    - id: Python
+    - id: Java
+    - id: Javascript
+    - id: HTML
+    - id: Typescript
+    - id: PHP
+    - id: MATLAB
+
+- id: Software Tech
+  color: "#FF6347"
+  children:
+    - id: Testing
+      children:
+        - id: Fuzzing
+          children:
+            - id: AFLNet
+            - id: LibFuzzer
+        - id: V model
+    - id: Project Management
+    - id: Architecture
+    - id: Framework
+      children:
+        - id: React
+        - id: Vue
+        - id: Django
+        - id: Servlet
+        - id: Next.js
+        - id: TensorFlow
+        - id: PyTorch
