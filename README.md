@@ -27,6 +27,7 @@ My favorite feature! An interactive D3.js visualization of my research interests
 - **Jekyll**: Static site generation
 - **D3.js**: Interactive data visualization
 - **YAML**: Data-driven interest structure
+<<<<<<< HEAD
 - **GitHub Pages**: Hosting and deployment
 
 ## 🎨 Design Philosophy
@@ -107,4 +108,82 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **Built with ❤️ and lots of ☕**
 
+*Last updated: December 2024*
+## 🔧 How It Works
+
+### Interest Network Structure
+The interest network uses a hierarchical YAML structure:
+
+```yaml
+- id: Research
+  color: "#1E90FF"
+  children:
+    - id: Machine Learning
+      children:
+        - id: Time Series Analysis
+          children:
+            - id: Mamba
+```
+
+### Cross-domain Connections
+Special connections between different domains are defined in JavaScript:
+
+```javascript
+{source: 'Python', target: 'Machine Learning'},
+{source: 'Ada', target: 'Cybersecurity'}
+```
+
+## 🚀 Getting Started
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/lvyl9909/lvyl9909.github.io.git
+   ```
+
+2. **Install dependencies**
+   ```bash
+   bundle install
+   ```
+
+3. **Run locally**
+   ```bash
+   bundle exec jekyll serve
+   ```
+
+4. **Visit** `http://localhost:4000`
+
+## 📊 Adding New Interests
+
+Want to add a new research interest? It's super easy!
+
+1. **Edit** `_data/interests.yml`
+2. **Add** your new node in the right place
+3. **Restart** Jekyll server
+4. **Done!** The visualization updates automatically
+
+## 🌐 Live Demo
+
+Visit the live site: **[https://lvyl9909.github.io](https://lvyl9909.github.io)**
+=======
+>>>>>>> 4008837957e6cc7cbec0d083d8a34ddfb128f858
+
+## 🤝 Contributing
+
+Found a bug? Want to suggest an improvement? Feel free to:
+- Open an issue
+- Submit a pull request
+- Reach out directly
+
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+**Built with ❤️ and lots of ☕**
+
+<<<<<<< HEAD
 *Last updated: December 2024* 
+=======
+*Last updated: December 2024*
+>>>>>>> 4008837957e6cc7cbec0d083d8a34ddfb128f858
