@@ -6,7 +6,7 @@ permalink: /
 profile:
   image: avatar-yilin1.jpeg
   keywords:
-    Master student, Process mining, Artificial intelligent (AI) in education, Data science
+    LLM social behaviour simulation, Trajectory data mining, Intent detection, Process mining, Artificial intelligent (AI) in education
   address: 
     School of Computing and Information Systems,
     University of Melbourne.
@@ -17,9 +17,8 @@ news: true
 social: true
 ---
 
-I am currently a Master’s student in Software Engineering at the [University of 
-Melbourne](https://www.unimelb.edu.au/){:target="_blank"}, Australia. I'm interested in applications of Artificial intelligent (AI) in education and process-aware data science, though I remain enthusiastic about all areas of computer science.
-As a skilled software engineering master, I consistently served as the team leader, responsible for project management and core function development.
+I am currently a joint PhD student at [Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences](https://www.siat.ac.cn/) and [Beijing Normal University–Hong Kong Baptist University United International College](https://www.uic.edu.cn/en/).
+My research focuses on large language model (LLM)-driven social behavior simulation, spatiotemporal trajectory mining, and semantic trajectory inference. 
 
 Between Dec 2024 and Apr 2025, I served as a Research Assistant in Professor [Yuanlin Zhang](https://www.depts.ttu.edu/stem/membership/member_bios/yuanlin_zhang.php/){:target="_blank"}’s group
 at [Texas Tech University](http://ttu.edu/){:target="_blank"}, exploring how AI and logic can together improve K-12 education.
@@ -32,16 +31,18 @@ at [Texas Tech University](http://ttu.edu/){:target="_blank"}, exploring how AI 
 <hr>
 
 #### Education
+- <strong style="font-weight: 800;">PhD (2025-Now), Computer Science and Technology, Hong Kong Baptist University, Zhuhai.</strong> \\
+  - Working hard now ...
 
-- <strong style="font-weight: 800;">MSc (2023-Now), Software Engineering, University of Melbourne, Australia.</strong> \\
+- <strong style="font-weight: 800;">MSc (2023-2025), Software Engineering, University of Melbourne, Australia.</strong> \\
   - Expected to graduate with H1 (First-Class Honour).
   - Thesis1 (2025 semester1): "Discovering Self-Regulated Learning Patterns in Chatbot-Powered
   Education Environment", advised by
   [Abel Armas Cervantes](https://findanexpert.unimelb.edu.au/profile/822941-abel-armas-cervantes/){:target="_blank"} and [Antonette Mendoza](https://findanexpert.unimelb.edu.au/profile/6868-antonette-mendoza/){:target="_blank"}.
-    - This thesis is currently under review.
+    - This thesis has been accepted by AAEE2025 (oral).
   - Thesis2 (2024 semester2): "Enhancing Approximate Conformance Checking Accuracy with Hierarchical Clustering Model Behaviour Sampling", advised by 
   [Artem Polyvyanyy](http://polyvyanyy.com/){:target="_blank"}. 
-    - An e-copy of my thesis can be download via [[this link](./assets/thesis_yilin.pdf)].
+    - An e-copy of my thesis can be download via [[this link](./assets/2025s1_final.pdf)].
 
 - <strong>BSc (2017-2021), Computer Science and Technology, [Zhengzhou University](https://www.zzu.edu.cn/){:target="_blank"}, China. </strong>\\
   - Graduated in the top 10% (Rank: 15/176).
